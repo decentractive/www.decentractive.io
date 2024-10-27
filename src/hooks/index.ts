@@ -1,5 +1,3 @@
 export * from "./useClientEffect"
 export * from "./useClientReady"
 export * from "./useDebouncedValue"
-export * from "./useReviews"
-export * from "./useWhoAmi"

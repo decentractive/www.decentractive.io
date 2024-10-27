@@ -3,7 +3,7 @@ import _ from "lodash"
 import { FC, PropsWithChildren, useEffect, useState } from "react"
 
 import Banner from "@/components/Banner"
-import ExternalLinks from "@/components/ExternalLinks"
+import Footer from "@/components/Footer"
 
 import ErrorAlert from "@/alerts/error"
 import NoticeAlert from "@/alerts/notice"
@@ -146,13 +146,14 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
           </div>
         </div>
 
-        <footer className="layout pb-3 pt-6 md:py-6">
+        {/* <footer className="layout pb-3 pt-6 md:py-6">
           <div className="grid grid-cols-[1fr,auto,1fr] md:gap-4">
             <div className="max-md:hidden col-start-1">
               <ExternalLinks />
             </div>
           </div>
-        </footer>
+        </footer> */}
+        <Footer />
       </div>
     </>
   )

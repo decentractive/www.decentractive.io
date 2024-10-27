@@ -17,7 +17,7 @@ const HomeNonLoggedEntities: FC = () => {
     <div className="lg:w-full lg:max-w-4xl mx-auto px-4 pb-20 pt-14">
       <div className="mt-4 sm:mt-8 sm:text-center">
         <h1
-          className={`text-4xl font-semibold sm:text-7xl tracking-tight ${poppins.className}`}
+          className={`text-5xl font-semibold sm:text-7xl tracking-tight ${poppins.className}`}
         >
           <span className="hidden sm:block align-top text-balance">
             Empowering the Future of Identity with Decentralized Trust

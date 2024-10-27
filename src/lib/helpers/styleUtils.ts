@@ -9,6 +9,7 @@ import {
   GitFork,
   GlobeLock,
   Headset,
+  Menu,
   MessageSquareReply,
   MessageSquareText,
   MoonIcon,
@@ -91,6 +92,7 @@ export const nodeIconsLucide: IconsType = {
   Zap,
   Gavel,
   GitFork,
+  Menu,
 }
 
 export function getStatusColor(status: EntityStatus | undefined) {

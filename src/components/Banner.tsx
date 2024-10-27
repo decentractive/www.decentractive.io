@@ -1,18 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import * as VisuallyHidden from "@radix-ui/react-visually-hidden"
+import dynamic from "next/dynamic"
 import Link from "next/link"
-import { FC } from "react"
+import { FC, useCallback } from "react"
 import React from "react"
-import { SiGitbook } from "react-icons/si"
 
 import clsxm from "@/lib/clsxm"
 import { plusJakartaSans } from "@/lib/fonts"
-import { gradients, resolvedRoute } from "@/lib/helpers"
+import { resolvedRoute } from "@/lib/helpers"
 
 import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
   Button,
   NavigationMenu,
   NavigationMenuContent,
@@ -21,19 +17,14 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   Separator,
-  ShadTooltip,
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
 } from "@/components"
 import IconComponent from "@/components/GenericIcon/IconComponent"
 
 import AlertDropdown from "@/alerts/alertDropDown"
 import { useAlertAtom } from "@/atom/alertAtom"
-import { useAuthAtom } from "@/atom/authAtom"
 import { useDarkAtom } from "@/atom/darkAtom"
+
+const MenuModal = dynamic(() => import("@/components/Modal/MenuModal"))
 
 type BannerProps = {
   className?: string
@@ -42,7 +33,11 @@ type BannerProps = {
 const Banner: FC<BannerProps> = ({ className }) => {
   const { dark, setDark, gradientIndex } = useDarkAtom()
   const { notificationCenter } = useAlertAtom()
-  const { isUser, isCompany, entityData } = useAuthAtom()
+  const [openMenuModal, setOpenMenuModal] = React.useState(false)
+
+  const showMenuModal = useCallback(() => {
+    setOpenMenuModal(true)
+  }, [])
 
   return (
     <>
@@ -62,7 +57,7 @@ const Banner: FC<BannerProps> = ({ className }) => {
               </span>
             </Link>
             <div className="flex items-center">
-              {/* navigation menu for KYB */}
+              {/* navigation menu */}
               <NavigationMenu>
                 <NavigationMenuList className="hidden md:flex">
                   <NavigationMenuItem>
@@ -258,14 +253,6 @@ const Banner: FC<BannerProps> = ({ className }) => {
                       Pricing
                     </NavigationMenuLink>
                   </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <NavigationMenuLink
-                      href="/business"
-                      className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    >
-                      About Us
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
             </div>
@@ -280,79 +267,12 @@ const Banner: FC<BannerProps> = ({ className }) => {
             </kbd>
           </Button>
           <div className="header-end-division">
-            <div className="header-end-display">
-              {!entityData ? (
-                <>
-                  <Button
-                    size="sm"
-                    variant="default"
-                    className="hidden xl:inline-flex "
-                  >
-                    <Link href="/signup" className="whitespace-nowrap">
-                      Request a Demo
-                    </Link>
-                  </Button>
-                  <ShadTooltip
-                    content="Join to verify your reviews"
-                    asChild
-                    side="bottom"
-                  >
-                    <button className="inline-flex xl:hidden">
-                      <IconComponent
-                        name="UserRoundPlus"
-                        className="side-bar-button-size"
-                      />
-                    </button>
-                  </ShadTooltip>
-                </>
-              ) : isUser ? (
-                <>
-                  <Button
-                    size="sm"
-                    variant="default"
-                    className="hidden xl:inline-flex "
-                  >
-                    <Link href="/app/review/add" className="whitespace-nowrap">
-                      Add a review
-                    </Link>
-                  </Button>
-                  <ShadTooltip content="Add a review" asChild side="bottom">
-                    <button className="inline-flex xl:hidden">
-                      <IconComponent
-                        name="MessageSquareText"
-                        className="side-bar-button-size"
-                      />
-                    </button>
-                  </ShadTooltip>
-                </>
-              ) : (
-                <>
-                  <Button
-                    size="sm"
-                    variant="default"
-                    className="hidden xl:inline-flex "
-                  >
-                    <Link
-                      href="/app/review/respond"
-                      className="whitespace-nowrap"
-                    >
-                      Respond to reviews
-                    </Link>
-                  </Button>
-                  <ShadTooltip
-                    content="Respond to reviews"
-                    asChild
-                    side="bottom"
-                  >
-                    <button className="inline-flex xl:hidden">
-                      <IconComponent
-                        name="MessageSquareReply"
-                        className="side-bar-button-size"
-                      />
-                    </button>
-                  </ShadTooltip>
-                </>
-              )}
+            <div className="hidden md:flex header-end-display">
+              <Button size="sm" variant="default">
+                <Link href="/signup" className="whitespace-nowrap">
+                  Request a Demo
+                </Link>
+              </Button>
               <Separator orientation="vertical" />
               <button
                 className="extra-side-bar-save-disable"
@@ -384,143 +304,21 @@ const Banner: FC<BannerProps> = ({ className }) => {
                   />
                 </div>
               </AlertDropdown>
-              {entityData && (
-                <>
-                  <Separator orientation="vertical" />
-                  <div>
-                    <Sheet>
-                      <SheetTrigger>
-                        <Avatar className="h-7 w-7 focus-visible:outline-0 cursor-pointer overflow-hidden">
-                          <AvatarImage src={entityData?.profile_image} />
-                          <AvatarFallback
-                            className={`${gradients[gradientIndex]}`}
-                          ></AvatarFallback>
-                        </Avatar>
-                      </SheetTrigger>
-                      <SheetContent className="w-1/2" side="right">
-                        <SheetTitle>
-                          <VisuallyHidden.Root>Menu</VisuallyHidden.Root>
-                        </SheetTitle>
-                        <SheetHeader>
-                          <div className="grid grid-cols-[auto,1fr] grid-rows-1 gap-4 align-middle text-center items-center">
-                            <Avatar className="h-7 w-7 focus-visible:outline-0 cursor-pointer overflow-hidden">
-                              <AvatarImage src={entityData?.profile_image} />
-                              <AvatarFallback
-                                className={`${gradients[gradientIndex]}`}
-                              ></AvatarFallback>
-                            </Avatar>
-                            <div className="grid grid-rows-2 gap-1 text-left">
-                              <div className="text-sm font-semibold">
-                                {entityData?.email ?? "Unknown email"}
-                              </div>
-                              <div className="text-sm text-muted-foreground">
-                                {entityData?.fullname ?? "Unknown name"}
-                              </div>
-                            </div>
-                          </div>
-                        </SheetHeader>
-                        <div className="flex flex-col pt-2 pb-4 h-[calc(100%-50px)]">
-                          <div className="flex flex-col mb-3">
-                            <nav>
-                              <ul className="list-none text-sm">
-                                <li className="rounded-lg hover:bg-accent list-none focus:outline-none">
-                                  <button className="relative text-left grid items-start w-full grid-cols-[min-content_min-content_minmax(0,auto)_min-content_min-content] grid-rows-[min-content] p-2.5">
-                                    <IconComponent
-                                      name="Smile"
-                                      className="h-4 w-4 text-foreground"
-                                    />
-                                    <span className="pl-2 text-ellipsis text-nowrap leading-3 font-medium pt-0.5">
-                                      Set status
-                                    </span>
-                                  </button>
-                                </li>
-                                <li className="block h-px mt-[7px] mb-2 -mx-2 p-0 border-0 bg-accent" />
-                                <li className="rounded-lg hover:bg-accent list-none focus:outline-none">
-                                  <button className="relative text-left grid items-start w-full grid-cols-[min-content_min-content_minmax(0,auto)_min-content_min-content] grid-rows-[min-content] p-2.5">
-                                    <IconComponent
-                                      name="User"
-                                      className="h-4 w-4 text-foreground"
-                                    />
-                                    <span className="pl-2 text-ellipsis text-nowrap leading-3 font-medium pt-0.5">
-                                      Your profile
-                                    </span>
-                                  </button>
-                                </li>
-                                <li className="rounded-lg hover:bg-accent list-none focus:outline-none">
-                                  <button className="relative text-left grid items-start w-full grid-cols-[min-content_min-content_minmax(0,auto)_min-content_min-content] grid-rows-[min-content] p-2.5">
-                                    <IconComponent
-                                      name="BarChartHorizontal"
-                                      className="h-4 w-4 text-foreground"
-                                    />
-                                    <span className="pl-2 text-ellipsis text-nowrap leading-3 font-medium pt-0.5">
-                                      Your activities
-                                    </span>
-                                  </button>
-                                </li>
-                                <li className="block h-px mt-[7px] mb-2 -mx-2 p-0 border-0 bg-accent" />
-                                <li className="rounded-lg hover:bg-accent list-none focus:outline-none">
-                                  <button className="relative text-left grid items-start w-full grid-cols-[min-content_min-content_minmax(0,auto)_min-content_min-content] grid-rows-[min-content] p-2.5">
-                                    <IconComponent
-                                      name="Wallet"
-                                      className="h-4 w-4 text-foreground"
-                                    />
-                                    <span className="pl-2 text-ellipsis text-nowrap leading-3 font-medium pt-0.5">
-                                      Plans
-                                    </span>
-                                  </button>
-                                </li>
-                                <li className="rounded-lg hover:bg-accent list-none focus:outline-none">
-                                  <button className="relative text-left grid items-start w-full grid-cols-[min-content_min-content_minmax(0,auto)_min-content_min-content] grid-rows-[min-content] p-2.5">
-                                    <IconComponent
-                                      name="Settings"
-                                      className="h-4 w-4 text-foreground"
-                                    />
-                                    <span className="pl-2 text-ellipsis text-nowrap leading-3 font-medium pt-0.5">
-                                      Settings
-                                    </span>
-                                  </button>
-                                </li>
-                                <li className="block h-px mt-[7px] mb-2 -mx-2 p-0 border-0 bg-accent" />
-                                <li className="rounded-lg hover:bg-accent list-none focus:outline-none">
-                                  <button className="relative text-left grid items-start w-full grid-cols-[min-content_min-content_minmax(0,auto)_min-content_min-content] grid-rows-[min-content] p-2.5">
-                                    <SiGitbook className="h-4 w-4 fill-current" />
-                                    <span className="pl-2 text-ellipsis text-nowrap leading-3 font-medium pt-0.5">
-                                      decentractive Docs
-                                    </span>
-                                  </button>
-                                </li>
-                                <li className="rounded-lg hover:bg-accent list-none focus:outline-none">
-                                  <button className="relative text-left grid items-start w-full grid-cols-[min-content_min-content_minmax(0,auto)_min-content_min-content] grid-rows-[min-content] p-2.5">
-                                    <IconComponent
-                                      name="Headset"
-                                      className="h-4 w-4 text-foreground"
-                                    />
-                                    <span className="pl-2 text-ellipsis text-nowrap leading-3 font-medium pt-0.5">
-                                      Support
-                                    </span>
-                                  </button>
-                                </li>
-                                <li className="block h-px mt-[7px] mb-2 -mx-2 p-0 border-0 bg-accent" />
-                                <li className="rounded-lg hover:bg-accent list-none focus:outline-none p-2.5 ">
-                                  <Link {...resolvedRoute("/login")}>
-                                    <span className="pl-2 text-ellipsis text-nowrap leading-3 font-medium pt-0.5">
-                                      Sign out
-                                    </span>
-                                  </Link>
-                                </li>
-                              </ul>
-                            </nav>
-                          </div>
-                        </div>
-                      </SheetContent>
-                    </Sheet>
-                  </div>
-                </>
-              )}
+            </div>
+            <div
+              className="md:hidden my-3 hover:border border border-input hover:bg-accent hover:text-accent-foreground rounded-md p-2"
+              onClick={showMenuModal}
+            >
+              <IconComponent
+                name="Menu"
+                className="side-bar-button-size"
+                aria-hidden="true"
+              />
             </div>
           </div>
         </div>
       </header>
+      <MenuModal open={openMenuModal} setOpen={setOpenMenuModal} />
     </>
   )
 }

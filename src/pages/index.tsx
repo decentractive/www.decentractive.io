@@ -17,26 +17,16 @@ import IconComponent from "@/components/GenericIcon/IconComponent"
 import Layout from "@/components/Layout"
 import Seo from "@/components/Seo"
 
-import { useAuthAtom } from "@/atom/authAtom"
-import HomeCompanies from "@/pages/home/HomeCompanies"
 import HomeNonLoggedEntities from "@/pages/home/HomeNonLoggedEntities"
-import HomeUsers from "@/pages/home/HomeUsers"
 
 const HomePage: NextPage = () => {
-  const { isUser, isCompany, entityData } = useAuthAtom()
   return (
     <Layout>
       <Seo />
       <main className="grid h-full w-full items-center md:justify-center">
         <section className="relative overflow-hidden pt-1">
           <div className="mx-auto px-2 pb-20 pt-14">
-            {!entityData ? (
-              <HomeNonLoggedEntities />
-            ) : isUser ? (
-              <HomeUsers />
-            ) : (
-              <HomeCompanies />
-            )}
+            <HomeNonLoggedEntities />
           </div>
           {/* <div className="framer">
             <div className="relative w-full h-full flex-none">
@@ -294,7 +284,7 @@ const HomePage: NextPage = () => {
             </div>
           </section>
         </div>
-        <div className="mx-auto max-w-7xl px-4 lg:px-8 overflow-hidden pb-20">
+        <div className="mx-auto max-w-sm sm:max-w-7xl px-4 lg:px-8 overflow-hidden pb-20">
           <section className="mt-0 sm:mt-5 px-2">
             <h2 className="font-semibold tracking-tight text-[#FF5557]">
               Use cases
@@ -399,7 +389,7 @@ const HomePage: NextPage = () => {
             </div>
           </section>
         </div>
-        <div className="lg:w-full lg:max-w-4xl mx-auto px-4 pb-20 pt-14">
+        {/* <div className="lg:w-full lg:max-w-4xl mx-auto px-4 pb-20 pt-14">
           <div className="mt-4 sm:mt-8 sm:text-center">
             <h1
               className={`text-4xl font-semibold sm:text-6xl tracking-tight ${poppins.className}`}
@@ -448,7 +438,7 @@ const HomePage: NextPage = () => {
               </Button>
             </div>
           </div>
-        </div>
+        </div> */}
       </main>
     </Layout>
   )
