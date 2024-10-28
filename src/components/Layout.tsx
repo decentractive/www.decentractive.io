@@ -145,14 +145,6 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
             ))}
           </div>
         </div>
-
-        {/* <footer className="layout pb-3 pt-6 md:py-6">
-          <div className="grid grid-cols-[1fr,auto,1fr] md:gap-4">
-            <div className="max-md:hidden col-start-1">
-              <ExternalLinks />
-            </div>
-          </div>
-        </footer> */}
         <Footer />
       </div>
     </>

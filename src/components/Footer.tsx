@@ -2,10 +2,12 @@ import Link from "next/link"
 import { FC } from "react"
 
 import clsxm from "@/lib/clsxm"
-import { plusJakartaSans } from "@/lib/fonts"
 import { resolvedRoute } from "@/lib/helpers"
 
 import ExternalLinks from "@/components/ExternalLinks"
+import { ShadTooltip } from "@/components/ShadTooltip"
+
+import DecentractiveLogo from "~/images/svg/decentractive.svg"
 
 type FooterProps = {
   className?: string
@@ -24,13 +26,15 @@ const Footer: FC<FooterProps> = ({ className }) => {
           <div className="items-center flex flex-none flex-col flex-nowrap gap-0 h-min justify-center overflow-visible relative w-full p-4 sm:p-10">
             <div className="flex-col gap-10 justify-start items-start flex flex-none sm:flex-row flex-nowrap sm:gap-5 h-min sm:justify-center max-w-7xl overflow-visible relative w-full pt-0 pb-10 px-0">
               <div className="sm:items-start flex sm:flex-[1_0_0px] flex-col flex-nowrap gap-0 h-min justify-start overflow-visible relative sm:w-px p-0">
-                <div className="flex-none h-7 overflow-visible relative">
-                  <Link {...resolvedRoute("/app/kyc")} className="group px-1">
-                    <span
-                      className={`text-base font-semibold ${plusJakartaSans.className}`}
-                    >
-                      decentractive
-                    </span>
+                <div className="flex-none overflow-visible relative">
+                  <Link {...resolvedRoute("/")} className="group">
+                    <ShadTooltip content="Decentractive" side="right">
+                      <DecentractiveLogo
+                        className="h-7 w-auto"
+                        alt="Decentractive"
+                        aria-label="Decentractive"
+                      />
+                    </ShadTooltip>
                   </Link>
                 </div>
                 <div className="flex flex-col justify-start shrink-0">
@@ -73,6 +77,22 @@ const Footer: FC<FooterProps> = ({ className }) => {
                   <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
                     <Link {...resolvedRoute("/app/kyc")}>
                       Compliance Resources
+                    </Link>
+                  </div>
+                  <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
+                    <Link {...resolvedRoute("/app/kyc")}>FAQs</Link>
+                  </div>
+                  <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
+                    <Link {...resolvedRoute("/app/kyc")}>
+                      Corporate & Workforce
+                    </Link>
+                  </div>
+                  <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
+                    <Link {...resolvedRoute("/app/kyc")}>Best Practise</Link>
+                  </div>
+                  <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
+                    <Link {...resolvedRoute("/app/kyc")}>
+                      Webinars & Workshops
                     </Link>
                   </div>
                 </div>

@@ -2,7 +2,12 @@ import { forwardRef } from "react"
 
 import { nodeIconsLucide } from "@/lib/helpers"
 
-import { IconComponentProps } from "@/types/components"
+export type IconComponentProps = {
+  name: string
+  className?: string
+  iconColor?: string
+  onClick?: () => void
+}
 
 const IconComponent = forwardRef(
   ({ name, className, iconColor }: IconComponentProps, ref) => {

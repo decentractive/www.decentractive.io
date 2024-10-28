@@ -5,7 +5,6 @@ import { FC, useCallback } from "react"
 import React from "react"
 
 import clsxm from "@/lib/clsxm"
-import { plusJakartaSans } from "@/lib/fonts"
 import { resolvedRoute } from "@/lib/helpers"
 
 import {
@@ -17,12 +16,13 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   Separator,
+  ShadTooltip,
 } from "@/components"
 import IconComponent from "@/components/GenericIcon/IconComponent"
 
-import AlertDropdown from "@/alerts/alertDropDown"
-import { useAlertAtom } from "@/atom/alertAtom"
 import { useDarkAtom } from "@/atom/darkAtom"
+
+import DecentractiveLogo from "~/images/svg/decentractive.svg"
 
 const MenuModal = dynamic(() => import("@/components/Modal/MenuModal"))
 
@@ -31,8 +31,7 @@ type BannerProps = {
 }
 
 const Banner: FC<BannerProps> = ({ className }) => {
-  const { dark, setDark, gradientIndex } = useDarkAtom()
-  const { notificationCenter } = useAlertAtom()
+  const { dark, setDark } = useDarkAtom()
   const [openMenuModal, setOpenMenuModal] = React.useState(false)
 
   const showMenuModal = useCallback(() => {
@@ -49,12 +48,14 @@ const Banner: FC<BannerProps> = ({ className }) => {
       >
         <div className="layout relative items-center justify-between flex">
           <div className="items-center space-x-10 max-md:pl-1 flex py-1.5 md:my-2">
-            <Link {...resolvedRoute("/app/kyc")} className="group px-1">
-              <span
-                className={`text-base font-semibold ${plusJakartaSans.className}`}
-              >
-                decentractive
-              </span>
+            <Link {...resolvedRoute("/")} className="group px-1">
+              <ShadTooltip content="Decentractive" side="right">
+                <DecentractiveLogo
+                  className="h-7 w-auto"
+                  alt="Decentractive"
+                  aria-label="Decentractive"
+                />
+              </ShadTooltip>
             </Link>
             <div className="flex items-center">
               {/* navigation menu */}
@@ -82,16 +83,13 @@ const Banner: FC<BannerProps> = ({ className }) => {
                           Built with robust encryption and user-controlled data
                           protection.
                         </ListItem>
-                        <ListItem
-                          title="For Businesses vs. Individuals"
-                          href="/app/kyb/register"
-                        >
+                        <ListItemComingSoon title="For Businesses vs. Individuals">
                           Tailored solutions for organizations and individual
                           users.
-                        </ListItem>
-                        <ListItem title="Demo Videos" href="/app/kyb/register">
+                        </ListItemComingSoon>
+                        <ListItemComingSoon title="Demo Videos">
                           Watch real-world examples of our platform in action
-                        </ListItem>
+                        </ListItemComingSoon>
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
@@ -193,59 +191,6 @@ const Banner: FC<BannerProps> = ({ className }) => {
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                        <ListItem
-                          title="Developer Documentation"
-                          href="/app/kyc/register"
-                        >
-                          Comprehensive guides and API docs for developers.
-                        </ListItem>
-                        <ListItem
-                          title="DID Registrar & Resolver API"
-                          href="/app/kyc/register"
-                        >
-                          Detailed documentation for DID creation and
-                          verification.
-                        </ListItem>
-                        <ListItem
-                          title="Guides & Tutorials"
-                          href="/app/kyc/register"
-                        >
-                          Step-by-step guides for implementing key use cases.
-                        </ListItem>
-                        <ListItem
-                          title="Best Practices"
-                          href="/app/kyc/register"
-                        >
-                          Recommended practices for secure and efficient
-                          integration.
-                        </ListItem>
-                        <ListItem
-                          title="Corporate & Workforce"
-                          href="/app/kyc/register"
-                        >
-                          Verify employee credentials and certifications with
-                          ease.
-                        </ListItem>
-                        <ListItem
-                          title="Compliance Resources"
-                          href="/app/kyc/register"
-                        >
-                          Whitepapers and guides for regulatory compliance.
-                        </ListItem>
-                        <ListItem
-                          title="Webinars & Workshops"
-                          href="/app/kyc/register"
-                        >
-                          Join upcoming sessions to deepen your platform
-                          knowledge.
-                        </ListItem>
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
                     <NavigationMenuLink
                       href="/reviews"
                       className="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
@@ -292,28 +237,36 @@ const Banner: FC<BannerProps> = ({ className }) => {
                   />
                 )}
               </button>
-              <AlertDropdown>
-                <div className="extra-side-bar-save-disable relative">
-                  {notificationCenter && (
-                    <div className="header-notifications"></div>
-                  )}
-                  <IconComponent
-                    name="Bell"
-                    className="side-bar-button-size"
-                    aria-hidden="true"
-                  />
-                </div>
-              </AlertDropdown>
             </div>
-            <div
-              className="md:hidden my-3 hover:border border border-input hover:bg-accent hover:text-accent-foreground rounded-md p-2"
-              onClick={showMenuModal}
-            >
-              <IconComponent
-                name="Menu"
-                className="side-bar-button-size"
-                aria-hidden="true"
-              />
+            <div className="md:hidden grid grid-cols-[auto,auto] gap-3">
+              <button
+                className="extra-side-bar-save-disable"
+                onClick={() => {
+                  setDark(!dark)
+                }}
+              >
+                {dark ? (
+                  <IconComponent
+                    name="SunIcon"
+                    className="side-bar-button-size"
+                  />
+                ) : (
+                  <IconComponent
+                    name="MoonIcon"
+                    className="side-bar-button-size"
+                  />
+                )}
+              </button>
+              <div
+                className="my-3 hover:border border border-input hover:bg-accent hover:text-accent-foreground rounded-md p-2"
+                onClick={showMenuModal}
+              >
+                <IconComponent
+                  name="Menu"
+                  className="side-bar-button-size"
+                  aria-hidden="true"
+                />
+              </div>
             </div>
           </div>
         </div>

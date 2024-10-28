@@ -1,0 +1,50 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 301 368">
+	<title>decentractive_SSa-R03b_Mil-ai</title>
+	<defs>
+		<linearGradient id="g1" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(247.695,230.743,-161.628,173.502,75.158,-27.257)">
+			<stop offset="0" stop-color="#00b1e8"/>
+			<stop offset=".528" stop-color="#7828ff"/>
+			<stop offset="1" stop-color="#bd19e7"/>
+		</linearGradient>
+		<linearGradient id="g2" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(280.493,148.335,-90.682,171.473,93.642,-5.323)">
+			<stop offset="0" stop-color="#00b1e8"/>
+			<stop offset=".528" stop-color="#7828ff"/>
+			<stop offset="1" stop-color="#bd19e7"/>
+		</linearGradient>
+		<linearGradient id="g3" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(150.941,114.226,-61.034,80.652,126.558,-22.479)">
+			<stop offset="0" stop-color="#00b1e8"/>
+			<stop offset=".528" stop-color="#7828ff"/>
+			<stop offset="1" stop-color="#bd19e7"/>
+		</linearGradient>
+		<linearGradient id="g4" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-303.284,-255.397,444.364,-527.682,13.592,577.752)">
+			<stop offset="0" stop-color="#00b1e8"/>
+			<stop offset=".528" stop-color="#7828ff"/>
+			<stop offset="1" stop-color="#bd19e7"/>
+		</linearGradient>
+		<linearGradient id="g5" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(254.917,-267.017,120.407,114.951,104.591,315.001)">
+			<stop offset="0" stop-color="#00b1e8"/>
+			<stop offset=".528" stop-color="#7828ff"/>
+			<stop offset="1" stop-color="#bd19e7"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: url(#g1) } 
+		.s1 { fill: url(#g2) } 
+		.s2 { fill: url(#g3) } 
+		.s3 { fill: url(#g4) } 
+		.s4 { fill: url(#g5) } 
+	</style>
+	<g id="Layer 1">
+		<path id="&lt;Path&gt;" class="s0" d="m87.4 151.2v97.9l64 40v67.9l-64-40-56.6-31.8v-85z"/>
+		<g id="&lt;Group&gt;">
+			<path id="&lt;Path&gt;" class="s1" d="m151.3 92.3l66.1 40.5v70.9l-66.1-40.5z"/>
+		</g>
+		<g id="&lt;Group&gt;">
+			<path id="&lt;Path&gt;" class="s2" d="m151.3 92.3l66.1 40.5v70.9l-66.1-40.5z"/>
+		</g>
+		<path id="&lt;Path&gt;" class="s3" d="m216.1 54.4v194.7l-64.8 40v67.9l64.8-40 56.6-31.8v-262.6z"/>
+		<g id="&lt;Group&gt;">
+			<path id="&lt;Path&gt;" class="s4" d="m151.7 92.3l-120.9 74.4v70.9l120.9-74.4z"/>
+		</g>
+	</g>
+</svg>
