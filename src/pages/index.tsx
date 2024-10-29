@@ -266,9 +266,6 @@ const HomePage: NextPage = () => {
                 <div className="mb-4 w-full">
                   <span className="relative mb-3 sm:mb-6 flex h-12 w-12 font-bold items-center justify-center rounded-full bg-[#FF5557] text-[#FFF] text-3xl slashZero">
                     3
-                    <span className="absolute z-20 border flex h-10 w-10 items-center justify-center rounded-full bg-green-500 text-white opacity-5">
-                      dfsdf
-                    </span>
                   </span>
                   <div className="mb-8 lg:mb-10">
                     <h4 className="mt-2 font-semibold text-lg cursor-pointer flex gap-1 mb-3">

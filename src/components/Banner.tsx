@@ -65,7 +65,7 @@ const Banner: FC<BannerProps> = ({ className }) => {
                     <NavigationMenuTrigger>How it works</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                        <ListItem title="Overview" href="/app/kyb/register">
+                        <ListItem title="Overview" href="/hiw/overview">
                           Intro to our decentralized identity and verifiable
                           credentials platform
                         </ListItem>
