@@ -18,6 +18,8 @@ const HomeNonLoggedEntities: FC = () => {
       <div className="mt-4 sm:mt-8 sm:text-center">
         <h1
           className={`text-5xl font-semibold sm:text-7xl tracking-tight ${poppins.className}`}
+          data-aos="fade-up"
+          data-aos-delay="50"
         >
           <span className="hidden sm:block align-top text-balance">
             Empowering the Future of Identity with Decentralized Trust
@@ -26,7 +28,11 @@ const HomeNonLoggedEntities: FC = () => {
             Empowering the Future of Identity with Decentralized Trust
           </span>
         </h1>
-        <p className="mt-6 leading-7 sm:text-lg sm:leading-8">
+        <p
+          className="mt-6 leading-7 sm:text-lg sm:leading-8"
+          data-aos="fade-up"
+          data-aos-delay="10"
+        >
           <span className="hidden sm:block">
             <span className="inline-block text-balance align-top">
               A secure, private, and efficient solution for managing identities
@@ -38,7 +44,11 @@ const HomeNonLoggedEntities: FC = () => {
             and credentials.
           </span>
         </p>
-        <p className="leading-7 sm:text-lg sm:leading-8">
+        <p
+          className="leading-7 sm:text-lg sm:leading-8"
+          data-aos="fade-up"
+          data-aos-delay="10"
+        >
           <span className="hidden sm:block">
             <span className="inline-block text-balance align-top">
               Powered by Decentralized Identifiers (DIDs) and Verifiable
@@ -50,14 +60,18 @@ const HomeNonLoggedEntities: FC = () => {
             Credentials (VCs).
           </span>
         </p>
-        <div className="mt-10 sm:flex sm:items-center sm:justify-center sm:gap-x-4">
+        <div
+          className="mt-10 sm:flex sm:items-center sm:justify-center sm:gap-x-4"
+          data-aos="fade-up"
+          data-aos-delay="10"
+        >
           <Button size="lg" variant="default">
             <Link href="/reviews">Get Started</Link>
           </Button>
           <Button variant="link">
             <div className="flex">
               <span className="text-sm self-center text-[#FF5557]">
-                Request a Demo{" "}
+                Learn more{" "}
               </span>
               <IconComponent
                 name="ChevronRight"

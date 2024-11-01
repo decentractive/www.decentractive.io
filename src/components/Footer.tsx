@@ -75,25 +75,7 @@ const Footer: FC<FooterProps> = ({ className }) => {
                     </Link>
                   </div>
                   <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
-                    <Link {...resolvedRoute("/app/kyc")}>
-                      Compliance Resources
-                    </Link>
-                  </div>
-                  <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
                     <Link {...resolvedRoute("/app/kyc")}>FAQs</Link>
-                  </div>
-                  <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
-                    <Link {...resolvedRoute("/app/kyc")}>
-                      Corporate & Workforce
-                    </Link>
-                  </div>
-                  <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
-                    <Link {...resolvedRoute("/app/kyc")}>Best Practise</Link>
-                  </div>
-                  <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
-                    <Link {...resolvedRoute("/app/kyc")}>
-                      Webinars & Workshops
-                    </Link>
                   </div>
                 </div>
                 <div className="items-start flex flex-none flex-col flex-nowrap gap-2.5 h-auto justify-start justify-self-start overflow-visible relative w-full pl-0 pr-5 py-0">
@@ -103,23 +85,6 @@ const Footer: FC<FooterProps> = ({ className }) => {
                       Industry Applications
                     </Link>
                   </div>
-                  <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
-                    <Link {...resolvedRoute("/app/kyc")}>Key Use Cases</Link>
-                  </div>
-                  <h6 className="text-sm font-semibold mt-2">Core Features</h6>
-                  <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
-                    <Link {...resolvedRoute("/app/kyc")}>
-                      Self-Sovereign Identity
-                    </Link>
-                  </div>
-                  <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
-                    <Link {...resolvedRoute("/app/kyc")}>
-                      Multi-Chain Support
-                    </Link>
-                  </div>
-                  <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
-                    <Link {...resolvedRoute("/app/kyc")}>Interoperability</Link>
-                  </div>
                 </div>
                 <div className="items-start flex flex-none flex-col flex-nowrap gap-2.5 h-auto justify-start justify-self-start overflow-visible relative w-full pl-0 pr-5 py-0">
                   <h6 className="text-sm font-semibold">Community</h6>
@@ -127,20 +92,6 @@ const Footer: FC<FooterProps> = ({ className }) => {
                     <Link {...resolvedRoute("/app/kyc")}>
                       Join Our Community
                     </Link>
-                  </div>
-                  <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
-                    <Link {...resolvedRoute("/app/kyc")}>Developer Forum</Link>
-                  </div>
-                  <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
-                    <Link {...resolvedRoute("/app/kyc")}>Community Events</Link>
-                  </div>
-                  <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
-                    <Link {...resolvedRoute("/app/kyc")}>
-                      Open Source Contributions
-                    </Link>
-                  </div>
-                  <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
-                    <Link {...resolvedRoute("/app/kyc")}>Blog & News</Link>
                   </div>
                   <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
                     <Link {...resolvedRoute("/app/kyc")}>Get in Touch</Link>
