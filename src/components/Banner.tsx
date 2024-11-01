@@ -42,7 +42,7 @@ const Banner: FC<BannerProps> = ({ className }) => {
     <>
       <header
         className={clsxm(
-          "sticky text-sm top-0 z-10 border-b border-black-50/10 bg-white backdrop-blur-lg",
+          "sticky text-sm top-0 z-50 border-b border-black-50/10 bg-white backdrop-blur-lg",
           className,
         )}
       >
@@ -78,7 +78,7 @@ const Banner: FC<BannerProps> = ({ className }) => {
                         </ListItem>
                         <ListItem
                           title="Security & Privacy"
-                          href="/app/kyb/register"
+                          href="/hiw/securityPrivacy"
                         >
                           Built with robust encryption and user-controlled data
                           protection.

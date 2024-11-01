@@ -72,9 +72,7 @@ const Overview: NextPage = () => {
         </section>
         <div className="w-full sm:max-w-7xl mx-auto px-4 sm:px-10">
           <section className="mt-0 sm:mt-5">
-            <p
-              className={`mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl ${poppins.className}`}
-            >
+            <p className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
               <span className="hidden sm:block">
                 <span className="inline-block align-top text-balance">
                   Decentralized Identity and Verifiable Credentials Explained
@@ -102,9 +100,7 @@ const Overview: NextPage = () => {
         </div>
         <div className="w-full sm:max-w-7xl mx-auto px-4 sm:px-10">
           <section className="mt-20">
-            <p
-              className={`mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl ${poppins.className}`}
-            >
+            <p className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
               <span className="hidden sm:block">
                 <span className="inline-block align-top text-balance">
                   Why Choose Decentractive for Decentralized Identity?
@@ -171,9 +167,7 @@ const Overview: NextPage = () => {
         </div>
         <div className="w-full sm:max-w-7xl mx-auto px-4 sm:px-10">
           <section className="mt-20">
-            <p
-              className={`mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl ${poppins.className}`}
-            >
+            <p className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
               <span className="hidden sm:block">
                 <span className="inline-block align-top text-balance">
                   How Decentractive’s Platform Works
@@ -254,9 +248,7 @@ const Overview: NextPage = () => {
         </div>
         <div className="w-full sm:max-w-7xl mx-auto px-4 sm:px-10 pb-20">
           <section className="mt-0 sm:mt-5">
-            <p
-              className={`mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl ${poppins.className}`}
-            >
+            <p className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
               <span className="hidden sm:block">
                 <span className="inline-block align-top text-balance">
                   Privacy, Security, and Compliance at the Core

@@ -209,12 +209,12 @@ export default function MenuModal({
           </Accordion>
         </div>
         <div className="grid grid-rows-[auto,auto] gap-2 items-start">
+          <ExternalLinks className="flex justify-start py-2" />
           <div className="flex-none h-auto relative w-auto">
             <span className="text-sm text-muted-foreground">
               &copy; {new Date().getFullYear()} Decentractive
             </span>
           </div>
-          <ExternalLinks className="flex justify-start py-2" />
         </div>
       </SheetContent>
     </Sheet>

@@ -1,7 +1,6 @@
 import type { NextPage } from "next"
 import Link from "next/link"
-
-import { poppins } from "@/lib/fonts"
+import React from "react"
 
 import {
   Button,
@@ -17,49 +16,60 @@ import IconComponent from "@/components/GenericIcon/IconComponent"
 import Layout from "@/components/Layout"
 import Seo from "@/components/Seo"
 
+import { useDarkAtom } from "@/atom/darkAtom"
 import HomeNonLoggedEntities from "@/pages/home/HomeNonLoggedEntities"
 
+import network_dark from "~/videos/network_dark.mp4"
+import network_light from "~/videos/network_light.mp4"
+
 const HomePage: NextPage = () => {
+  const { dark } = useDarkAtom()
+  const [network, setNetwork] = React.useState(
+    dark ? network_dark : network_light,
+  )
+  const vidRef = React.useRef<HTMLVideoElement>(null)
+
+  React.useEffect(() => {
+    if (dark) {
+      setNetwork(network_dark)
+    } else {
+      setNetwork(network_light)
+    }
+    vidRef.current?.load()
+  }, [dark])
+
   return (
     <Layout>
       <Seo />
       <main className="grid h-full w-full items-center md:justify-center">
         <section className="relative overflow-hidden pt-1">
-          <div className="mx-auto px-2 pb-20 pt-14">
+          <div className="mx-auto px-2 pb-20 pt-14 relative z-10">
             <HomeNonLoggedEntities />
           </div>
-          {/* <div className="framer">
+          <div className="framer">
             <div className="relative w-full h-full flex-none">
               <video
-                loop
+                ref={vidRef}
+                preload="auto"
+                playsInline
                 autoPlay
+                muted
+                loop
                 className="cursor-auto w-full h-full block object-cover bg-[rgba(0,0,0,0)] object-[50%_50%] rounded-none"
               >
                 <source
-                  src="https://framerusercontent.com/assets/EPAjrPciwbYcRG4yHc9GGMQ69KU.webm"
-                  type="video/webm; codecs=av01.0.08M.08.0.110.01.01.01.1"
-                  media="(min-width:810px) and (-webkit-min-device-pixel-ratio: 2)"
-                />
-                <source
-                  src="https://framerusercontent.com/assets/UEcewUs0sO1esTagR1XENajYHSY.mp4"
+                  src={network}
                   type="video/mp4; codecs=hvc1.1.6.H120.b0"
-                  media="(min-width:810px)"
-                />
-                <source
-                  src="https://framerusercontent.com/assets/2xzmrDT6kHCEyePneiicGOLssgk.webm"
-                  type="video/webm; codecs=vp9"
                   media="(min-width:810px)"
                 />
               </video>
             </div>
-          </div> */}
+          </div>
         </section>
         <div className="grid sm:grid-cols-2 gap-4 mx-auto max-w-7xl overflow-hidden pb-20">
           <div className="px-4 lg:px-8 overflow-hidden">
             <section className="mt-0 sm:mt-5 px-2">
-              <p
-                className={`mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl ${poppins.className}`}
-              >
+              <p className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
                 <span className="hidden sm:block">
                   <span className="inline-block align-top text-balance">
                     The Problem with Traditional Identity Systems
@@ -82,9 +92,7 @@ const HomePage: NextPage = () => {
           </div>
           <div className="px-4 lg:px-8 overflow-hidden">
             <section className="mt-0 sm:mt-5 px-2">
-              <p
-                className={`mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl ${poppins.className}`}
-              >
+              <p className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
                 <span className="hidden sm:block">
                   <span className="inline-block align-top text-balance">
                     Our Solution: Decentralized Identity and Verifiable
@@ -122,9 +130,7 @@ const HomePage: NextPage = () => {
             <h2 className="font-semibold tracking-tight text-[#FF5557]">
               Features & Benefits
             </h2>
-            <p
-              className={`mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl ${poppins.className}`}
-            >
+            <p className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
               <span className="hidden sm:block">
                 <span className="inline-block align-top text-balance">
                   Why Choose Our Decentralized Identity Solution?
@@ -214,9 +220,7 @@ const HomePage: NextPage = () => {
             <h2 className="font-semibold tracking-tight text-[#FF5557]">
               How It Works
             </h2>
-            <p
-              className={`mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl ${poppins.className}`}
-            >
+            <p className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
               <span className="hidden sm:block">
                 <span className="inline-block align-top text-balance">
                   We make it easy for both issuers and verifiers.
@@ -286,9 +290,7 @@ const HomePage: NextPage = () => {
             <h2 className="font-semibold tracking-tight text-[#FF5557]">
               Use cases
             </h2>
-            <p
-              className={`mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl ${poppins.className}`}
-            >
+            <p className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
               <span className="hidden sm:block">
                 <span className="inline-block align-top text-balance">
                   Use Cases Across Industries
@@ -389,7 +391,7 @@ const HomePage: NextPage = () => {
         {/* <div className="lg:w-full lg:max-w-4xl mx-auto px-4 pb-20 pt-14">
           <div className="mt-4 sm:mt-8 sm:text-center">
             <h1
-              className={`text-4xl font-semibold sm:text-6xl tracking-tight ${poppins.className}`}
+              className={`text-4xl font-semibold sm:text-6xl tracking-tight `}
             >
               <span className="hidden sm:block align-top text-balance">
                 Ready to Transform Identity Verification?

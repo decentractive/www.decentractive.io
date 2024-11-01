@@ -37,3 +37,13 @@ declare module "*.png" {
   const content: StaticImageData
   export default content
 }
+
+declare module "*.mp4" {
+  const content: string
+  export default content
+}
+
+declare module "*.webm" {
+  const content: string
+  export default content
+}
