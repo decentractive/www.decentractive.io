@@ -12,7 +12,6 @@ Welcome to the Decentractive website repository. This project serves as the offi
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Running Locally](#running-locally)
-- [Deployment](#deployment)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -47,10 +46,8 @@ The Decentractive website is designed to showcase our decentralized identity pla
 
 ## Technologies Used
 
-- **Frontend**: HTML5, CSS3, JavaScript, [React.js](https://reactjs.org/) or [Vue.js](https://vuejs.org/) for component-based structure
-- **Styling**: [Sass](https://sass-lang.com/) or [Tailwind CSS](https://tailwindcss.com/) for efficient, responsive design
-- **Backend**: [Node.js](https://nodejs.org/) and [Express](https://expressjs.com/) for server-side handling
-- **Deployment**: [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/) for hosting and continuous deployment
+- **Frontend**: HTML5, CSS3, JavaScript, [Nextjs](https://nextjs.org/), for component-based structure
+- **Styling**: Tailwind CSS](https://tailwindcss.com/) for efficient, responsive design
 - **Additional**: [Markdown](https://www.markdownguide.org/) for documentation, and [Git](https://git-scm.com/) for version control
 
 ---
@@ -62,14 +59,14 @@ The Decentractive website is designed to showcase our decentralized identity pla
 To run the website locally, ensure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (v14+ recommended)
-- [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/)
+- [Yarn](https://yarnpkg.com/)
 
 ### Installation
 
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/username/decentractive-website.git
+   git clone https://github.com/decentractive/www.decentractive.io.git
    cd decentractive-website
    ```
 
@@ -78,30 +75,17 @@ To run the website locally, ensure you have the following installed:
    yarn install
    ```
 
-# or
-
-npm install
-
-````
 ### Running Locally
 
 To start the website on your local development server, run:
- ```bash
- yarn start
+
+```bash
+yarn start
 # or
 npm run start
-````
+```
 
 The site should now be running on `http://localhost:3000`.
-
----
-
-## Deployment
-
-1. Push changes to the main branch of your GitHub repository.
-2. Link your repository to [Vercel](https://vercel.com) or [Netlify](https://www.netlify.com) for automated deployment.
-3. Configure environment variables if necessary (e.g., API keys).
-4. Your site will be live at your chosen domain once the deployment process completes.
 
 ---
 
