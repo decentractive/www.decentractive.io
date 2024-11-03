@@ -585,10 +585,18 @@ const Pricing: NextPage = () => {
           </div>
         </section>
         <section className="mt-24 md:mt-28 container mx-auto flex flex-col items-center max-w-[1019px]">
-          <h2 className="mx-5 pb-2 font-bold text-center text-5xl leading-[100%]">
+          <h2
+            className="mx-5 pb-2 font-bold text-center text-5xl leading-[100%]"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
             Frequently asked questions
           </h2>
-          <p className="mx-5 mt-3 text-center md:text-xl max-w-[764px]">
+          <p
+            className="mx-5 mt-3 text-center md:text-xl max-w-[764px]"
+            data-aos="fade-up"
+            data-aos-delay="10"
+          >
             At decentractive, we strive to provide the best service possible. If
             you have any questions, please check our FAQ below or please get in
             touch at{" "}
@@ -603,6 +611,8 @@ const Pricing: NextPage = () => {
             type="single"
             collapsible
             className="mt-11 w-full border rounded-[19px] mb-20 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="10"
           >
             <AccordionItem
               value="What is Decentractive’s Freemium Plan, and what does it
@@ -798,26 +808,57 @@ const Pricing: NextPage = () => {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem
-              value="Can I customize the status page on the Enterprise plan?"
+              value="What if I need additional reports or custom analytics?"
               className={clsxm(`px-3 transition-all`)}
             >
               <AccordionTrigger className="hover:no-underline">
                 <div className="flex items-center justify-between space-x-6">
                   <Label className="flex flex-col space-y-1 text-left w-full text-xl px-2">
-                    Can I customize the status page on the Enterprise plan?
+                    What if I need additional reports or custom analytics?
                   </Label>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-lg px-4 text-muted-foreground">
-                Yes! Enterprise users can set up a custom-branded status page,
-                enabling them to keep stakeholders updated on incident status,
-                maintenance, and service health in real-time. This page can be
-                branded and configured with custom CSS, multilingual support,
-                and subscription options.
+                Pro and Enterprise users can request additional custom reports
+                or advanced data visualization features. Additional reports
+                start at $25 each, with enhanced analytics options available at
+                custom pricing based on your organization’s specific needs.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
         </section>
+        <div>
+          <div className="pt-24 md:pt-32 lg:pt-40 bg-downtime">
+            <section className="container mx-auto flex flex-col items-center aos-init aos-animate">
+              <h2
+                className={`mt-2 md:mt-5 font-bold text-center text-[32px] md:text-[52px] lg:text-[64px] leading-[98%] ${poppins.className}`}
+                data-aos="fade-up"
+                data-aos-delay="50"
+              >
+                Take Control of Your Digital Identity?
+              </h2>
+              <p
+                className="mt-5 text-center md:text-xl max-w-4xl md:max-w-5xl"
+                data-aos="fade-up"
+                data-aos-delay="10"
+              >
+                Join Decentractive and experience a secure, privacy-first
+                approach to digital identity management. Choose the plan that
+                fits your needs and start building trust today.
+              </p>
+              <Button
+                size="lg"
+                className="mt-6 md:mt-8 w-full flex items-center justify-center font-medium text-base sm:text-large-18 ring-2 ring-offset-2 h-[50px] max-w-[332px] ring-offset-white"
+                variant="default"
+                data-aos="fade-up"
+                data-aos-delay="10"
+              >
+                Start for free
+              </Button>
+              <div className="pb-20 md:pb-28 lg:pb-36"></div>
+            </section>
+          </div>
+        </div>
       </main>
     </Layout>
   )

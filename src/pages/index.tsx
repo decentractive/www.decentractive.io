@@ -56,6 +56,8 @@ const HomePage: NextPage = () => {
                 muted
                 loop
                 className="cursor-auto w-full h-full block object-cover bg-[rgba(0,0,0,0)] object-[50%_50%] rounded-none"
+                data-aos="fade-in"
+                data-aos-delay="50"
               >
                 <source
                   src={network}
