@@ -835,7 +835,7 @@ const Pricing: NextPage = () => {
                 data-aos="fade-up"
                 data-aos-delay="50"
               >
-                Take Control of Your Digital Identity?
+                Ready to Take Control of Your Digital Identity?
               </h2>
               <p
                 className="mt-5 text-center md:text-xl max-w-4xl md:max-w-5xl"
@@ -843,8 +843,9 @@ const Pricing: NextPage = () => {
                 data-aos-delay="10"
               >
                 Join Decentractive and experience a secure, privacy-first
-                approach to digital identity management. Choose the plan that
-                fits your needs and start building trust today.
+                approach to digital identity management. <br />
+                Choose the plan that fits your needs and start building trust
+                today.
               </p>
               <Button
                 size="lg"
