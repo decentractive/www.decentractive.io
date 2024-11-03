@@ -73,7 +73,7 @@ const HomePage: NextPage = () => {
           <div className="px-4 lg:px-8 overflow-hidden">
             <section className="mt-0 sm:mt-5 px-2">
               <p
-                className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl"
+                className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl"
                 data-aos="fade-up"
                 data-aos-delay="50"
               >
@@ -103,7 +103,7 @@ const HomePage: NextPage = () => {
           <div className="px-4 lg:px-8 overflow-hidden">
             <section className="mt-0 sm:mt-5 px-2">
               <p
-                className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl"
+                className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl"
                 data-aos="fade-up"
                 data-aos-delay="50"
               >
@@ -147,7 +147,7 @@ const HomePage: NextPage = () => {
               <h2 className="font-semibold tracking-tight text-[#FF5557]">
                 Features & Benefits
               </h2>
-              <p className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
+              <p className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
                 <span className="hidden sm:block">
                   <span className="inline-block align-top text-balance">
                     Why Choose Our Decentralized Identity Solution?
@@ -247,7 +247,7 @@ const HomePage: NextPage = () => {
                 How It Works
               </h2>
               <p
-                className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl"
+                className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl"
                 id="credentialFlow"
               >
                 <span className="hidden sm:block">
@@ -265,16 +265,16 @@ const HomePage: NextPage = () => {
             </div>
             <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-6">
               <Card
-                className="bg-muted-foreground/5"
+                className="bg-[linear-gradient(209.48deg,_#F3F2E9_-0.82%,_#E9F3E9_77.43%)] dark:bg-[linear-gradient(110.1deg,_rgba(46,_29,_99,_0.4)_0%,_#3D0F34_100%)] border-none"
                 data-aos="fade-up"
                 data-aos-delay="10"
               >
                 <CardContent className="p-4">
                   <div className="grid grid-cols-[48px,auto] gap-4">
-                    <span className="self-center flex h-12 w-12 font-bold items-center justify-center rounded-full bg-[#FF5557] text-[#FFF] text-3xl slashZero">
+                    <span className="self-center flex h-12 w-12 font-bold items-center justify-center rounded-full bg-[#FF5557] text-[#FFF] text-4xl slashZero">
                       1
                     </span>
-                    <div className="border-l-4 pl-4">
+                    <div className="border-l-4 border-muted-foreground/30 pl-4">
                       <h4 className="font-semibold text-lg cursor-pointer flex gap-1">
                         Issue
                       </h4>
@@ -288,16 +288,16 @@ const HomePage: NextPage = () => {
                 </CardContent>
               </Card>
               <Card
-                className="bg-muted-foreground/5"
+                className="bg-[linear-gradient(125.85deg,_#E6F1F7_5.4%,_#E2E7F3_51.6%,_#E2E1F1_92.37%)] dark:bg-[linear-gradient(141.64deg,_#26066B_3.52%,_#0E3551_66.02%,_#052847_88.03%)] border-none"
                 data-aos="fade-up"
                 data-aos-delay="10"
               >
                 <CardContent className="p-4">
                   <div className="grid grid-cols-[48px,auto] gap-4">
-                    <span className="self-center flex h-12 w-12 font-bold items-center justify-center rounded-full bg-[#FF5557] text-[#FFF] text-3xl slashZero">
+                    <span className="self-center flex h-12 w-12 font-bold items-center justify-center rounded-full bg-[#FF5557] text-[#FFF] text-4xl slashZero">
                       2
                     </span>
-                    <div className="border-l-4 pl-4">
+                    <div className="border-l-4 border-muted-foreground/30 pl-4">
                       <h4 className="font-semibold text-lg cursor-pointer flex gap-1">
                         Store
                       </h4>
@@ -311,16 +311,16 @@ const HomePage: NextPage = () => {
                 </CardContent>
               </Card>
               <Card
-                className="bg-muted-foreground/5"
+                className="bg-[linear-gradient(166.95deg,_#F3E8ED_-2.86%,_#E9E7FD_139.46%)] dark:bg-[linear-gradient(200.41deg,_rgba(99,_29,_62,_0.4)_-5.53%,_rgba(35,_98,_111,_0.5)_97.77%)] border-none"
                 data-aos="fade-up"
                 data-aos-delay="10"
               >
                 <CardContent className="p-4">
                   <div className="grid grid-cols-[48px,auto] gap-4">
-                    <span className="self-center flex h-12 w-12 font-bold items-center justify-center rounded-full bg-[#FF5557] text-[#FFF] text-3xl slashZero">
+                    <span className="self-center flex h-12 w-12 font-bold items-center justify-center rounded-full bg-[#FF5557] text-[#FFF] text-4xl slashZero">
                       3
                     </span>
-                    <div className="border-l-4 pl-4">
+                    <div className="border-l-4 border-muted-foreground/30 pl-4">
                       <h4 className="font-semibold text-lg cursor-pointer flex gap-1">
                         Verify
                       </h4>
@@ -344,7 +344,7 @@ const HomePage: NextPage = () => {
               <h2 className="font-semibold tracking-tight text-[#FF5557]">
                 Security & Privacy
               </h2>
-              <p className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
+              <p className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
                 <span className="hidden sm:block">
                   <span className="inline-block align-top text-balance">
                     Security and Privacy First
@@ -358,7 +358,11 @@ const HomePage: NextPage = () => {
               </p>
             </div>
             <div className="mt-6 grid grid-cols-1 lg:grid-cols-[auto,60%] gap-x-8 gap-y-6">
-              <p className="text-base/7 text-muted-foreground lg:text-md/7 text-balance">
+              <p
+                className="text-base/7 text-muted-foreground lg:text-md/7 text-balance"
+                data-aos="fade-up"
+                data-aos-delay="10"
+              >
                 At Decentractive, we prioritize your data’s security and privacy
                 from the ground up. We implement industry-standard encryption,
                 adhere to GDPR guidelines, and follow privacy-by-design
@@ -367,7 +371,11 @@ const HomePage: NextPage = () => {
                 evolve, aligning with global standards to meet the needs of all
                 our users.
               </p>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+              <div
+                className="grid grid-cols-1 lg:grid-cols-2 gap-2"
+                data-aos="fade-up"
+                data-aos-delay="10"
+              >
                 <Card>
                   <CardContent className="p-2">
                     <div className="grid grid-cols-[48px,auto] gap-2">
@@ -384,7 +392,7 @@ const HomePage: NextPage = () => {
                     </div>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="">
                   <CardContent className="p-2">
                     <div className="grid grid-cols-[48px,auto] gap-2">
                       <div className="h-10 w-10 pt-2 border rounded-lg bg-foreground text-background shadow-lg self-center">
@@ -454,7 +462,7 @@ const HomePage: NextPage = () => {
               <h2 className="font-semibold tracking-tight text-[#FF5557]">
                 Use cases
               </h2>
-              <p className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
+              <p className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
                 <span className="hidden sm:block">
                   <span className="inline-block align-top text-balance">
                     Use Cases Across Industries
@@ -562,7 +570,7 @@ const HomePage: NextPage = () => {
         <div className="lg:w-full lg:max-w-4xl mx-auto px-4 pb-20 pt-6">
           <div className="mt-4 sm:mt-8 sm:text-center">
             <h1
-              className="text-4xl font-semibold sm:text-6xl tracking-tight"
+              className="text-4xl font-semibold sm:text-4xl tracking-tight"
               data-aos="fade-up"
               data-aos-delay="50"
             >
