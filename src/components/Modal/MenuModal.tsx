@@ -9,7 +9,6 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  Button,
   Label,
   Separator,
   ShadTooltip,
@@ -19,7 +18,6 @@ import {
   SheetTitle,
 } from "@/components"
 import ExternalLinks from "@/components/ExternalLinks"
-import IconComponent from "@/components/GenericIcon/IconComponent"
 
 import DecentractiveLogo from "~/images/svg/decentractive.svg"
 
@@ -56,7 +54,7 @@ export default function MenuModal({
             className="w-full h-full overflow-y-scroll scrollbar-thin scrollbar-thumb-accent scrollbar-track-muted-foreground scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-hover:scale-150 scrollbar-track-hover:scale-150"
           >
             <AccordionItem
-              value="Policies"
+              value="How it works"
               className={clsxm(`px-3 transition-all`)}
             >
               <AccordionTrigger className="hover:no-underline">
@@ -83,12 +81,6 @@ export default function MenuModal({
                     Built with robust encryption and user-controlled data
                     protection.
                   </ListItem>
-                  <ListItemComingSoon title="For Businesses vs. Individuals">
-                    Tailored solutions for organizations and individual users.
-                  </ListItemComingSoon>
-                  <ListItemComingSoon title="Demo Videos">
-                    Watch real-world examples of our platform in action
-                  </ListItemComingSoon>
                 </ul>
               </AccordionContent>
             </AccordionItem>
@@ -135,64 +127,6 @@ export default function MenuModal({
                     Full transparency with trackable activity logs for
                     compliance.
                   </ListItem>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem
-              value="Use Cases"
-              className={clsxm(`px-3 transition-all`)}
-            >
-              <AccordionTrigger className="hover:no-underline">
-                <div className="flex items-center justify-between space-x-2">
-                  <Label className="flex flex-col space-y-1 text-left w-full text-base">
-                    Use Cases
-                  </Label>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                <ul className="grid w-full gap-1">
-                  <ListItem title="Education" href="/app/kyc/register">
-                    Issue and verify digital diplomas and academic credentials.
-                  </ListItem>
-                  <ListItem title="Finance & Banking" href="/app/kyc/register">
-                    Efficient, compliant KYC processes with verifiable
-                    credentials.
-                  </ListItem>
-                  <ListItem title="Healthcare" href="/app/kyc/register">
-                    Secure, private health records that meet HIPAA standards.
-                  </ListItem>
-                  <ListItem
-                    title="Government & Public Services"
-                    href="/app/kyc/register"
-                  >
-                    Enable citizen ID management with data privacy.
-                  </ListItem>
-                  <ListItem
-                    title="Corporate & Workforce"
-                    href="/app/kyc/register"
-                  >
-                    Verify employee credentials and certifications with ease.
-                  </ListItem>
-                  <ListItem
-                    title="Customer Identity & Verification (CIV)"
-                    href="/app/kyc/register"
-                  >
-                    Quickly authenticate customer identities with trust and
-                    security.
-                  </ListItem>
-                  <li>
-                    <Button variant="link">
-                      <div className="flex">
-                        <span className="text-sm self-center text-[#FF5557]">
-                          See all use cases{" "}
-                        </span>
-                        <IconComponent
-                          name="ChevronRight"
-                          className="h-5 w-5 text-[#FF5557]"
-                        />
-                      </div>
-                    </Button>
-                  </li>
                 </ul>
               </AccordionContent>
             </AccordionItem>

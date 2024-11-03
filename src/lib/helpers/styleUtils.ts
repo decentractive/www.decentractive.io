@@ -1,6 +1,7 @@
 import {
   BarChartHorizontal,
   Bell,
+  Check,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
@@ -93,6 +94,7 @@ export const nodeIconsLucide: IconsType = {
   Gavel,
   GitFork,
   Menu,
+  Check,
 }
 
 export function getStatusColor(status: EntityStatus | undefined) {
