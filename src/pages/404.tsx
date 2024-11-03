@@ -3,8 +3,8 @@ import * as React from "react"
 
 import { resolvedRoute } from "@/lib/helpers"
 
-import Seo from "@/components/Seo"
 import Layout from "@/components/Layout"
+import Seo from "@/components/Seo"
 
 export default function NotFoundPage() {
   return (
@@ -15,7 +15,7 @@ export default function NotFoundPage() {
         <h1 className="font-display text-4xl">Not found</h1>
         <p className="mt-3">
           It looks like you're a little lost, friend. Try{" "}
-          <Link {...resolvedRoute("/app/kyc")} className="underline">
+          <Link {...resolvedRoute("/")} className="underline">
             returning home
           </Link>
           .

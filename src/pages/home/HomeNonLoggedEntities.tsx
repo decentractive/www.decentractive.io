@@ -1,18 +1,12 @@
 import Link from "next/link"
-import { FC, useState } from "react"
+import { FC } from "react"
 
 import { poppins } from "@/lib/fonts"
 
 import { Button } from "@/components"
 import IconComponent from "@/components/GenericIcon/IconComponent"
 
-import { ReviewType } from "@/types/api"
-
 const HomeNonLoggedEntities: FC = () => {
-  const [filteredReviews, setFilteredReviews] = useState<ReviewType[]>([])
-  const [filteredSearchReviews, setFilteredSearchReviews] = useState<
-    ReviewType[]
-  >([])
   return (
     <div className="lg:w-full mx-auto px-4 pb-20 pt-14">
       <div className="mt-4 sm:mt-8 sm:text-center">
@@ -66,7 +60,7 @@ const HomeNonLoggedEntities: FC = () => {
           data-aos-delay="10"
         >
           <Button size="lg" variant="default">
-            <Link href="/reviews">Get Started</Link>
+            <Link href="/signup">Get Started</Link>
           </Button>
           <Button variant="link">
             <div className="flex">

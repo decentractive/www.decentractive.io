@@ -65,20 +65,20 @@ const Banner: FC<BannerProps> = ({ className }) => {
                     <NavigationMenuTrigger>How it works</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                        <ListItem title="Overview" href="/hiw/overview">
+                        <ListItem title="Overview" href="/#howItWorks">
                           Intro to our decentralized identity and verifiable
                           credentials platform
                         </ListItem>
                         <ListItem
                           title="DID & Credential Flow"
-                          href="/app/kyb/register"
+                          href="/#credentialFlow"
                         >
                           See how identities and credentials are issued,
                           managed, and verified.
                         </ListItem>
                         <ListItem
                           title="Security & Privacy"
-                          href="/hiw/securityPrivacy"
+                          href="/#securityPrivacy"
                         >
                           Built with robust encryption and user-controlled data
                           protection.

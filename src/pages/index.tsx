@@ -11,6 +11,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  Label,
 } from "@/components"
 import IconComponent from "@/components/GenericIcon/IconComponent"
 import Layout from "@/components/Layout"
@@ -231,26 +232,35 @@ const HomePage: NextPage = () => {
               data-aos-delay="10"
             >
               <Button size="lg" variant="default">
-                <Link href="/reviews">Learn More About the Technology</Link>
+                <Link href="#howItWorks">Learn More About the Technology</Link>
               </Button>
             </div>
           </section>
         </div>
-        <div className="mx-auto max-w-7xl px-4 pt-10 lg:px-8 overflow-hidden pb-20">
-          <section className="mt-0 sm:mt-5 px-2">
+        <div
+          className="mx-auto max-w-7xl px-4 pt-10 lg:px-8 overflow-hidden pb-20"
+          id="howItWorks"
+        >
+          <section className="mt-5 sm:mt-10 px-2">
             <div data-aos="fade-up" data-aos-delay="50">
               <h2 className="font-semibold tracking-tight text-[#FF5557]">
                 How It Works
               </h2>
-              <p className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
+              <p
+                className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl"
+                id="credentialFlow"
+              >
                 <span className="hidden sm:block">
                   <span className="inline-block align-top text-balance">
-                    We make it easy for both issuers and verifiers.
+                    How Decentractive Works
                   </span>
                 </span>
-                <span className="sm:hidden">
-                  We make it easy for both issuers and verifiers.
-                </span>
+                <span className="sm:hidden">How Decentractive Works</span>
+              </p>
+              <p className="mt-3 leading-7 sm:text-lg sm:leading-8">
+                With Decentralized Identifiers (DIDs) and Verifiable Credentials
+                (VCs), Decentractive enables secure, self-sovereign identity
+                management.
               </p>
             </div>
             <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-6">
@@ -322,6 +332,119 @@ const HomePage: NextPage = () => {
                   </div>
                 </CardContent>
               </Card>
+            </div>
+          </section>
+        </div>
+        <div
+          className="mx-auto max-w-7xl px-4 pt-10 lg:px-8 overflow-hidden pb-20"
+          id="securityPrivacy"
+        >
+          <section className="mt-5 sm:mt-10 px-2">
+            <div data-aos="fade-up" data-aos-delay="50">
+              <h2 className="font-semibold tracking-tight text-[#FF5557]">
+                Security & Privacy
+              </h2>
+              <p className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
+                <span className="hidden sm:block">
+                  <span className="inline-block align-top text-balance">
+                    Security and Privacy First
+                  </span>
+                </span>
+                <span className="sm:hidden">Security and Privacy First</span>
+              </p>
+              <p className="mt-3 leading-7 sm:text-lg sm:leading-8">
+                Building trust through robust security and user-centric privacy
+                protections.
+              </p>
+            </div>
+            <div className="mt-6 grid grid-cols-1 lg:grid-cols-[auto,60%] gap-x-8 gap-y-6">
+              <p className="text-base/7 text-muted-foreground lg:text-md/7 text-balance">
+                At Decentractive, we prioritize your data’s security and privacy
+                from the ground up. We implement industry-standard encryption,
+                adhere to GDPR guidelines, and follow privacy-by-design
+                principles to ensure user control and data protection. As we
+                grow, our commitment to security and privacy will continue to
+                evolve, aligning with global standards to meet the needs of all
+                our users.
+              </p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+                <Card>
+                  <CardContent className="p-2">
+                    <div className="grid grid-cols-[48px,auto] gap-2">
+                      <div className="h-10 w-10 pt-2 border rounded-lg bg-foreground text-background shadow-lg self-center">
+                        <IconComponent name="Lock" className="w-6 h-6 m-auto" />
+                      </div>
+                      <div>
+                        <Label className="text-base">Data Encryption</Label>
+                        <p className="text-sm text-muted-foreground">
+                          End-to-end encryption to secure data in storage and
+                          transit.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="p-2">
+                    <div className="grid grid-cols-[48px,auto] gap-2">
+                      <div className="h-10 w-10 pt-2 border rounded-lg bg-foreground text-background shadow-lg self-center">
+                        <IconComponent
+                          name="UserCog"
+                          className="w-6 h-6 m-auto"
+                        />
+                      </div>
+                      <div>
+                        <Label className="text-base">
+                          User-Controlled Access
+                        </Label>
+                        <p className="text-sm text-muted-foreground">
+                          Manage who can access your credentials. You decide who
+                          to share your data with.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="p-2">
+                    <div className="grid grid-cols-[48px,auto] gap-2">
+                      <div className="h-10 w-10 pt-2 border rounded-lg bg-foreground text-background shadow-lg self-center">
+                        <IconComponent
+                          name="ShieldCheck"
+                          className="w-6 h-6 m-auto"
+                        />
+                      </div>
+                      <div>
+                        <Label className="text-base">Privacy by Design</Label>
+                        <p className="text-sm text-muted-foreground">
+                          Privacy-focused from the start to protect user data.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="p-2">
+                    <div className="grid grid-cols-[48px,auto] gap-2">
+                      <div className="h-10 w-10 pt-2 border rounded-lg bg-foreground text-background shadow-lg self-center">
+                        <IconComponent
+                          name="Gavel"
+                          className="w-6 h-6 m-auto"
+                        />
+                      </div>
+                      <div>
+                        <Label className="text-base">
+                          GDPR Compliance Ready
+                        </Label>
+                        <p className="text-sm text-muted-foreground">
+                          Following GDPR principles to ensure privacy and data
+                          protection.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </section>
         </div>

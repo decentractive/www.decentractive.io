@@ -10,6 +10,7 @@ import {
   GitFork,
   GlobeLock,
   Headset,
+  Lock,
   Menu,
   MessageSquareReply,
   MessageSquareText,
@@ -24,6 +25,7 @@ import {
   Target,
   ThumbsUp,
   User,
+  UserCog,
   UserRoundPlus,
   Wallet,
   Zap,
@@ -95,6 +97,8 @@ export const nodeIconsLucide: IconsType = {
   GitFork,
   Menu,
   Check,
+  Lock,
+  UserCog,
 }
 
 export function getStatusColor(status: EntityStatus | undefined) {
