@@ -392,7 +392,7 @@ const HomePage: NextPage = () => {
                     </div>
                   </CardContent>
                 </Card>
-                <Card className="">
+                <Card>
                   <CardContent className="p-2">
                     <div className="grid grid-cols-[48px,auto] gap-2">
                       <div className="h-10 w-10 pt-2 border rounded-lg bg-foreground text-background shadow-lg self-center">
@@ -485,7 +485,7 @@ const HomePage: NextPage = () => {
                     <Card>
                       <CardContent className="flex items-center justify-center p-6">
                         <div className="grid grid-rows-[auto,auto] gap-4">
-                          <h4 className="text-lg font-semibold text-left">
+                          <h4 className="text-lg font-semibold text-left text-sky-600">
                             Education
                           </h4>
                           <p className="text-base/7 text-muted-foreground">
@@ -503,7 +503,7 @@ const HomePage: NextPage = () => {
                     <Card>
                       <CardContent className="flex items-center justify-center p-6">
                         <div className="grid grid-rows-[auto,auto] gap-4">
-                          <h4 className="text-lg font-semibold text-left">
+                          <h4 className="text-lg font-semibold text-left text-purple-600">
                             Finance
                           </h4>
                           <p className="text-base/7 text-muted-foreground">
@@ -521,7 +521,7 @@ const HomePage: NextPage = () => {
                     <Card>
                       <CardContent className="flex items-center justify-center p-6">
                         <div className="grid grid-rows-[auto,auto] gap-4">
-                          <h4 className="text-lg font-semibold text-left">
+                          <h4 className="text-lg font-semibold text-left text-green-600">
                             Healthcare
                           </h4>
                           <p className="text-base/7 text-muted-foreground">
@@ -539,7 +539,7 @@ const HomePage: NextPage = () => {
                     <Card>
                       <CardContent className="flex items-center justify-center p-6">
                         <div className="grid grid-rows-[auto,auto] gap-4">
-                          <h4 className="text-lg font-semibold text-left">
+                          <h4 className="text-lg font-semibold text-left text-pink-600">
                             Government & Public Services
                           </h4>
                           <p className="text-base/7 text-muted-foreground">
