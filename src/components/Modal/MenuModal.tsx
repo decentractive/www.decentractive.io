@@ -36,13 +36,18 @@ export default function MenuModal({
         <SheetHeader>
           <SheetTitle className="flex text-md pb-2">
             <Link {...resolvedRoute("/")} className="group">
-              <ShadTooltip content="Decentractive" side="right">
-                <DecentractiveLogo
-                  className="h-7 w-auto"
-                  alt="Decentractive"
-                  aria-label="Decentractive"
-                />
-              </ShadTooltip>
+              <div className="grid grid-cols-[auto,auto] gap-1 items-center">
+                <ShadTooltip content="decentractive" side="right">
+                  <DecentractiveLogo
+                    className="h-7 w-auto"
+                    alt="decentractive"
+                    aria-label="decentractive"
+                  />
+                </ShadTooltip>
+                <span className="text-lg font-bold bg-gradient-to-bl from-sky-700 via-purple-500 to-purple-700 text-transparent bg-clip-text">
+                  decentractive
+                </span>
+              </div>
             </Link>
           </SheetTitle>
         </SheetHeader>
@@ -146,7 +151,7 @@ export default function MenuModal({
           <ExternalLinks className="flex justify-start py-2" />
           <div className="flex-none h-auto relative w-auto">
             <span className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} Decentractive
+              &copy; {new Date().getFullYear()} decentractive
             </span>
           </div>
         </div>
