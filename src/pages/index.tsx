@@ -2,6 +2,9 @@ import type { NextPage } from "next"
 import Link from "next/link"
 import React from "react"
 
+import clsxm from "@/lib/clsxm"
+import { gabarito } from "@/lib/fonts"
+
 import {
   Button,
   Card,
@@ -12,6 +15,7 @@ import {
   CarouselNext,
   CarouselPrevious,
   Label,
+  Separator,
 } from "@/components"
 import IconComponent from "@/components/GenericIcon/IconComponent"
 import Layout from "@/components/Layout"
@@ -21,20 +25,28 @@ import { useDarkAtom } from "@/atom/darkAtom"
 import HomeNonLoggedEntities from "@/pages/home/HomeNonLoggedEntities"
 
 import network_dark from "~/videos/network_dark.mp4"
+import network_dark_webm from "~/videos/network_dark.webm"
 import network_light from "~/videos/network_light.mp4"
+import network_light_webm from "~/videos/network_light.webm"
 
 const HomePage: NextPage = () => {
   const { dark } = useDarkAtom()
   const [network, setNetwork] = React.useState(
     dark ? network_dark : network_light,
   )
+  const [networkWebm, setNetworkWebm] = React.useState(
+    dark ? network_dark_webm : network_light_webm,
+  )
+
   const vidRef = React.useRef<HTMLVideoElement>(null)
 
   React.useEffect(() => {
     if (dark) {
       setNetwork(network_dark)
+      setNetworkWebm(network_dark_webm)
     } else {
       setNetwork(network_light)
+      setNetworkWebm(network_light_webm)
     }
     vidRef.current?.load()
   }, [dark])
@@ -61,10 +73,14 @@ const HomePage: NextPage = () => {
                 data-aos-delay="50"
               >
                 <source
+                  src={networkWebm}
+                  type="video/webm; codecs=av01.0.08M.08.0.110.01.01.01.1"
+                />
+                <source
                   src={network}
                   type="video/mp4; codecs=hvc1.1.6.H120.b0"
-                  media="(min-width:810px)"
                 />
+                <source src={networkWebm} type="video/webm; codecs=vp9" />
               </video>
             </div>
           </div>
@@ -73,7 +89,7 @@ const HomePage: NextPage = () => {
           <div className="px-4 lg:px-8 overflow-hidden">
             <section className="mt-0 sm:mt-5 px-2">
               <p
-                className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl"
+                className={`mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl ${gabarito.className}`}
                 data-aos="fade-up"
                 data-aos-delay="50"
               >
@@ -103,7 +119,7 @@ const HomePage: NextPage = () => {
           <div className="px-4 lg:px-8 overflow-hidden">
             <section className="mt-0 sm:mt-5 px-2">
               <p
-                className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl"
+                className={`mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl ${gabarito.className}`}
                 data-aos="fade-up"
                 data-aos-delay="50"
               >
@@ -147,7 +163,9 @@ const HomePage: NextPage = () => {
               <h2 className="font-semibold tracking-tight text-[#FF5557]">
                 Features & Benefits
               </h2>
-              <p className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
+              <p
+                className={`mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl ${gabarito.className}`}
+              >
                 <span className="hidden sm:block">
                   <span className="inline-block align-top text-balance">
                     Why Choose Our Decentralized Identity Solution?
@@ -157,88 +175,89 @@ const HomePage: NextPage = () => {
                   Why Choose Our Decentralized Identity Solution?
                 </span>
               </p>
-            </div>
-            <ul className="mt-6 grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-2">
-              <li className="flex flex-col items-start justify-between">
-                <div data-aos="fade-up" data-aos-delay="10">
-                  <div className="-ml-1.5 mb-3 h-14 w-14 sm:mb-6 pt-3 border rounded-lg bg-foreground text-background shadow-lg">
-                    <IconComponent
-                      name="ShieldCheck"
-                      className="w-8 h-8 m-auto"
-                    />
+              <ul className="mt-6 grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-2">
+                <li className="flex flex-col items-start justify-between">
+                  <div data-aos="fade-up" data-aos-delay="10">
+                    <div className="-ml-1.5 mb-3 h-14 w-14 sm:mb-6 pt-3 border rounded-lg bg-foreground text-background shadow-lg">
+                      <IconComponent
+                        name="ShieldCheck"
+                        className="w-8 h-8 m-auto"
+                      />
+                    </div>
+                    <h4 className="mt-2 font-semibold cursor-pointer flex gap-1">
+                      Privacy and Security by Design
+                    </h4>
+                    <p className="mt-2 text-base/7 text-muted-foreground lg:text-md/7">
+                      Protect your data with end-to-end encryption and
+                      decentralized storage. Our solution ensures only you
+                      decide who can access your credentials, reducing risks of
+                      data breaches and misuse.
+                    </p>
                   </div>
-                  <h4 className="mt-2 font-semibold cursor-pointer flex gap-1">
-                    Privacy and Security by Design
-                  </h4>
-                  <p className="mt-2 text-base/7 text-muted-foreground lg:text-md/7">
-                    Protect your data with end-to-end encryption and
-                    decentralized storage. Our solution ensures only you decide
-                    who can access your credentials, reducing risks of data
-                    breaches and misuse.
-                  </p>
-                </div>
-              </li>
-              <li className="flex flex-col items-start justify-between">
-                <div data-aos="fade-up" data-aos-delay="10">
-                  <div className="-ml-1.5 mb-3 h-14 w-14 sm:mb-6 pt-3 border rounded-lg bg-foreground text-background">
-                    <IconComponent name="Zap" className="w-8 h-8 m-auto" />
+                </li>
+                <li className="flex flex-col items-start justify-between">
+                  <div data-aos="fade-up" data-aos-delay="10">
+                    <div className="-ml-1.5 mb-3 h-14 w-14 sm:mb-6 pt-3 border rounded-lg bg-foreground text-background">
+                      <IconComponent name="Zap" className="w-8 h-8 m-auto" />
+                    </div>
+                    <h4 className="mt-2 font-semibold cursor-pointer flex gap-1">
+                      Simplified Credential Verification
+                    </h4>
+                    <p className="mt-2 text-base/7 text-muted-foreground lg:text-md/7">
+                      No more waiting. Verifiers can instantly confirm the
+                      authenticity of credentials without contacting the issuer,
+                      streamlining the verification process and cutting down
+                      unnecessary back-and-forth.
+                    </p>
                   </div>
-                  <h4 className="mt-2 font-semibold cursor-pointer flex gap-1">
-                    Simplified Credential Verification
-                  </h4>
-                  <p className="mt-2 text-base/7 text-muted-foreground lg:text-md/7">
-                    No more waiting. Verifiers can instantly confirm the
-                    authenticity of credentials without contacting the issuer,
-                    streamlining the verification process and cutting down
-                    unnecessary back-and-forth.
-                  </p>
-                </div>
-              </li>
-              <li className="flex flex-col items-start justify-between">
-                <div data-aos="fade-up" data-aos-delay="10">
-                  <div className="-ml-1.5 mb-3 h-14 w-14 sm:mb-6 pt-3 border rounded-lg bg-foreground text-background">
-                    <IconComponent name="Gavel" className="w-8 h-8 m-auto" />
+                </li>
+                <li className="flex flex-col items-start justify-between">
+                  <div data-aos="fade-up" data-aos-delay="10">
+                    <div className="-ml-1.5 mb-3 h-14 w-14 sm:mb-6 pt-3 border rounded-lg bg-foreground text-background">
+                      <IconComponent name="Gavel" className="w-8 h-8 m-auto" />
+                    </div>
+                    <h4 className="mt-2 font-semibold cursor-pointer flex gap-1">
+                      Regulatory Compliance and Standards-Based
+                    </h4>
+                    <p className="mt-2 text-base/7 text-muted-foreground lg:text-md/7">
+                      Built on the W3C DID and Verifiable Credentials standards,
+                      our solution aligns with global regulatory requirements,
+                      from GDPR to HIPAA, ensuring trust and compliance across
+                      industries.
+                    </p>
                   </div>
-                  <h4 className="mt-2 font-semibold cursor-pointer flex gap-1">
-                    Regulatory Compliance and Standards-Based
-                  </h4>
-                  <p className="mt-2 text-base/7 text-muted-foreground lg:text-md/7">
-                    Built on the W3C DID and Verifiable Credentials standards,
-                    our solution aligns with global regulatory requirements,
-                    from GDPR to HIPAA, ensuring trust and compliance across
-                    industries.
-                  </p>
-                </div>
-              </li>
-              <li className="flex flex-col items-start justify-between">
-                <div data-aos="fade-up" data-aos-delay="10">
-                  <div className="-ml-1.5 mb-3 h-14 w-14 sm:mb-6 pt-3 border rounded-lg bg-foreground text-background">
-                    <IconComponent name="GitFork" className="w-8 h-8 m-auto" />
+                </li>
+                <li className="flex flex-col items-start justify-between">
+                  <div data-aos="fade-up" data-aos-delay="10">
+                    <div className="-ml-1.5 mb-3 h-14 w-14 sm:mb-6 pt-3 border rounded-lg bg-foreground text-background">
+                      <IconComponent
+                        name="GitFork"
+                        className="w-8 h-8 m-auto"
+                      />
+                    </div>
+                    <h4 className="mt-2 font-semibold cursor-pointer flex gap-1">
+                      Interoperable Across Networks
+                    </h4>
+                    <p className="mt-2 text-base/7 text-muted-foreground lg:text-md/7">
+                      Our platform supports DIDs across multiple blockchains and
+                      networks, ensuring flexibility and compatibility for
+                      verifiers and issuers in diverse ecosystems.
+                    </p>
                   </div>
-                  <h4 className="mt-2 font-semibold cursor-pointer flex gap-1">
-                    Interoperable Across Networks
-                  </h4>
-                  <p className="mt-2 text-base/7 text-muted-foreground lg:text-md/7">
-                    Our platform supports DIDs across multiple blockchains and
-                    networks, ensuring flexibility and compatibility for
-                    verifiers and issuers in diverse ecosystems.
-                  </p>
-                </div>
-              </li>
-            </ul>
-            <div
-              className="mt-10 sm:flex sm:items-center sm:justify-center sm:gap-x-4"
-              data-aos="fade-up"
-              data-aos-delay="10"
-            >
-              <Button size="lg" variant="default">
-                <Link href="#howItWorks">Learn More About the Technology</Link>
-              </Button>
+                </li>
+              </ul>
+              <div className="mt-10 sm:flex sm:items-center sm:justify-center sm:gap-x-4">
+                <Button size="lg" variant="default">
+                  <Link href="#howItWorks">
+                    Learn More About the Technology
+                  </Link>
+                </Button>
+              </div>
             </div>
           </section>
         </div>
         <div
-          className="mx-auto max-w-7xl px-4 pt-10 lg:px-8 overflow-hidden pb-20"
+          className="mx-auto max-w-7xl px-4 pt-10 lg:px-8 overflow-hidden pb-10"
           id="howItWorks"
         >
           <section className="mt-5 sm:mt-10 px-2">
@@ -247,7 +266,7 @@ const HomePage: NextPage = () => {
                 How It Works
               </h2>
               <p
-                className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl"
+                className={`mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl ${gabarito.className}`}
                 id="credentialFlow"
               >
                 <span className="hidden sm:block">
@@ -263,76 +282,170 @@ const HomePage: NextPage = () => {
                 management.
               </p>
             </div>
-            <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-6">
-              <Card
-                className="bg-[linear-gradient(209.48deg,_#F3F2E9_-0.82%,_#E9F3E9_77.43%)] dark:bg-[linear-gradient(110.1deg,_rgba(46,_29,_99,_0.4)_0%,_#3D0F34_100%)] border-none"
-                data-aos="fade-up"
-                data-aos-delay="10"
-              >
-                <CardContent className="p-4">
-                  <div className="grid grid-cols-[48px,auto] gap-4">
-                    <span className="self-center flex h-12 w-12 font-bold items-center justify-center rounded-full bg-[#FF5557] text-[#FFF] text-4xl slashZero">
-                      1
-                    </span>
-                    <div className="border-l-4 border-muted-foreground/30 pl-4">
-                      <h4 className="font-semibold text-lg cursor-pointer flex gap-1">
-                        Issue
-                      </h4>
-                      <p className="text-base/7 text-muted-foreground lg:text-md/7">
-                        Trusted organizations create and issue verifiable
-                        credentials (VCs) to individuals using Decentralized
-                        Identifiers (DIDs).
-                      </p>
-                    </div>
+            <div
+              className="mt-6 hidden sm:block relative flex-wrap sm:mt-7"
+              data-aos="fade-up"
+              data-aos-delay="10"
+            >
+              <div className="absolute left-0 right-0 top-4 hidden h-[1px] lg:block ">
+                <div className="h-[1px] ml-4 w-2/3 bg-teal-500 bg-gradient-to-r from-[#FF5557] ">
+                  ‌
+                </div>
+              </div>
+              <div className="mb-4 grid lg:grid-cols-3 gap-0">
+                <div className="mb-4 w-full px-4">
+                  <span className="relative mb-3 sm:mb-6 flex h-8 w-8 font-bold items-center justify-center rounded-full bg-[#FF5557] text-[#FFF]">
+                    1
+                  </span>
+                  <div className="mb-8 lg:mb-10">
+                    <Card className="max-w-xl w-full bg-[linear-gradient(209.48deg,_#F3F2E9_-0.82%,_#E9F3E9_77.43%)] dark:bg-[linear-gradient(110.1deg,_rgba(46,_29,_99,_0.4)_0%,_#3D0F34_100%)] border-none">
+                      <CardContent className="p-4">
+                        <div className="font-semibold pb-3 text-lg">Issue</div>
+                        <Separator />
+                        <p className="text-base/7 text-muted-foreground lg:text-md/7 pt-3">
+                          Trusted organizations create and issue verifiable
+                          credentials (VCs) to individuals using Decentralized
+                          Identifiers (DIDs).
+                        </p>
+                      </CardContent>
+                    </Card>
                   </div>
-                </CardContent>
-              </Card>
-              <Card
-                className="bg-[linear-gradient(125.85deg,_#E6F1F7_5.4%,_#E2E7F3_51.6%,_#E2E1F1_92.37%)] dark:bg-[linear-gradient(141.64deg,_#26066B_3.52%,_#0E3551_66.02%,_#052847_88.03%)] border-none"
-                data-aos="fade-up"
-                data-aos-delay="10"
-              >
-                <CardContent className="p-4">
-                  <div className="grid grid-cols-[48px,auto] gap-4">
-                    <span className="self-center flex h-12 w-12 font-bold items-center justify-center rounded-full bg-[#FF5557] text-[#FFF] text-4xl slashZero">
-                      2
-                    </span>
-                    <div className="border-l-4 border-muted-foreground/30 pl-4">
-                      <h4 className="font-semibold text-lg cursor-pointer flex gap-1">
-                        Store
-                      </h4>
-                      <p className="text-base/7 text-muted-foreground lg:text-md/7">
-                        Individuals securely store these credentials in their
-                        digital wallets, fully controlling access and
-                        distribution.
-                      </p>
-                    </div>
+                </div>
+                <div className="mb-4 w-full px-4">
+                  <span className="relative mb-3 sm:mb-6 flex h-8 w-8 font-bold items-center justify-center rounded-full bg-[#FF5557] text-[#FFF]">
+                    2
+                  </span>
+                  <div className="mb-8 lg:mb-10">
+                    <Card className="max-w-xl w-full bg-[linear-gradient(125.85deg,_#E6F1F7_5.4%,_#E2E7F3_51.6%,_#E2E1F1_92.37%)] dark:bg-[linear-gradient(141.64deg,_#26066B_3.52%,_#0E3551_66.02%,_#052847_88.03%)] border-none">
+                      <CardContent className="p-4">
+                        <div className="font-semibold pb-3 text-lg">Store</div>
+                        <Separator />
+                        <p className="text-base/7 text-muted-foreground lg:text-md/7 pt-3">
+                          Individuals securely store these credentials in their
+                          digital wallets, fully controlling access and
+                          distribution.
+                        </p>
+                      </CardContent>
+                    </Card>
                   </div>
-                </CardContent>
-              </Card>
-              <Card
-                className="bg-[linear-gradient(166.95deg,_#F3E8ED_-2.86%,_#E9E7FD_139.46%)] dark:bg-[linear-gradient(200.41deg,_rgba(99,_29,_62,_0.4)_-5.53%,_rgba(35,_98,_111,_0.5)_97.77%)] border-none"
-                data-aos="fade-up"
-                data-aos-delay="10"
-              >
-                <CardContent className="p-4">
-                  <div className="grid grid-cols-[48px,auto] gap-4">
-                    <span className="self-center flex h-12 w-12 font-bold items-center justify-center rounded-full bg-[#FF5557] text-[#FFF] text-4xl slashZero">
-                      3
-                    </span>
-                    <div className="border-l-4 border-muted-foreground/30 pl-4">
-                      <h4 className="font-semibold text-lg cursor-pointer flex gap-1">
-                        Verify
-                      </h4>
-                      <p className="text-base/7 text-muted-foreground lg:text-md/7">
-                        Organizations can instantly verify the authenticity of
-                        credentials, ensuring trust, privacy, and efficiency.
-                      </p>
-                    </div>
+                </div>
+                <div className="mb-4 w-full px-4">
+                  <span className="relative mb-3 sm:mb-6 flex h-8 w-8 font-bold items-center justify-center rounded-full bg-[#FF5557] text-[#FFF]">
+                    3
+                  </span>
+                  <div className="mb-8 lg:mb-10">
+                    <Card className="max-w-xl w-full bg-[linear-gradient(166.95deg,_#F3E8ED_-2.86%,_#E9E7FD_139.46%)] dark:bg-[linear-gradient(200.41deg,_rgba(99,_29,_62,_0.4)_-5.53%,_rgba(35,_98,_111,_0.5)_97.77%)] border-none">
+                      <CardContent className="p-4">
+                        <div className="font-semibold pb-3 text-lg">Verify</div>
+                        <Separator />
+                        <p className="text-base/7 text-muted-foreground lg:text-md/7 pt-3">
+                          Organizations can instantly verify the authenticity of
+                          credentials, ensuring trust, privacy, and efficiency.
+                        </p>
+                      </CardContent>
+                    </Card>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </div>
+            <ul
+              className="mt-6 w-full sm:hidden"
+              data-aos="fade-up"
+              data-aos-delay="10"
+            >
+              <li
+                className={clsxm(
+                  "flex flex-col space-y-2 border-l border-[#FF5557] pl-4 ml-4",
+                )}
+              >
+                <div
+                  className={clsxm("-ml-8 grid grid-cols-[32px,auto] gap-2")}
+                >
+                  <div className="w-8 h-8 p-1 font-semibold text-center rounded-full bg-[#FF5557] text-[#FFF] border border-foreground/10">
+                    1
+                  </div>
+                  <div className="grid grid-rows-[auto,auto] gap-2">
+                    <div
+                      className={clsxm("flex items-center space-x-2 -mt-2 p-2")}
+                    >
+                      <Card className="max-w-xl w-full bg-[linear-gradient(209.48deg,_#F3F2E9_-0.82%,_#E9F3E9_77.43%)] dark:bg-[linear-gradient(110.1deg,_rgba(46,_29,_99,_0.4)_0%,_#3D0F34_100%)] border-none">
+                        <CardContent className="p-4">
+                          <div className="font-semibold pb-3 text-lg">
+                            Issue
+                          </div>
+                          <Separator />
+                          <p className="text-base/7 text-muted-foreground lg:text-md/7 pt-3">
+                            Trusted organizations create and issue verifiable
+                            credentials (VCs) to individuals using Decentralized
+                            Identifiers (DIDs).
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li
+                className={clsxm(
+                  "flex flex-col space-y-2 border-l border-[#FF5557] pl-4 ml-4",
+                )}
+              >
+                <div
+                  className={clsxm("-ml-8 grid grid-cols-[32px,auto] gap-2")}
+                >
+                  <div className="w-8 h-8 p-1 font-semibold text-center rounded-full bg-[#FF5557] text-[#FFF] border border-foreground/10">
+                    2
+                  </div>
+                  <div className="grid grid-rows-[auto,auto] gap-2">
+                    <div
+                      className={clsxm("flex items-center space-x-2 -mt-2 p-2")}
+                    >
+                      <Card className="max-w-xl w-full bg-[linear-gradient(125.85deg,_#E6F1F7_5.4%,_#E2E7F3_51.6%,_#E2E1F1_92.37%)] dark:bg-[linear-gradient(141.64deg,_#26066B_3.52%,_#0E3551_66.02%,_#052847_88.03%)] border-none">
+                        <CardContent className="p-4">
+                          <div className="font-semibold pb-3 text-lg">
+                            Store
+                          </div>
+                          <Separator />
+                          <p className="text-base/7 text-muted-foreground lg:text-md/7 pt-3">
+                            Individuals securely store these credentials in
+                            their digital wallets, fully controlling access and
+                            distribution.
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li className={clsxm("flex flex-col space-y-2 pl-4 ml-4")}>
+                <div
+                  className={clsxm("-ml-8 grid grid-cols-[32px,auto] gap-2")}
+                >
+                  <div className="w-8 h-8 p-1 font-semibold text-center rounded-full bg-[#FF5557] text-[#FFF] border border-foreground/10">
+                    3
+                  </div>
+                  <div className="grid grid-rows-[auto,auto] gap-2">
+                    <div
+                      className={clsxm("flex items-center space-x-2 -mt-2 p-2")}
+                    >
+                      <Card className="max-w-xl w-full bg-[linear-gradient(166.95deg,_#F3E8ED_-2.86%,_#E9E7FD_139.46%)] dark:bg-[linear-gradient(200.41deg,_rgba(99,_29,_62,_0.4)_-5.53%,_rgba(35,_98,_111,_0.5)_97.77%)] border-none">
+                        <CardContent className="p-4">
+                          <div className="font-semibold pb-3 text-lg">
+                            Verify
+                          </div>
+                          <Separator />
+                          <p className="text-base/7 text-muted-foreground lg:text-md/7 pt-3">
+                            Organizations can instantly verify the authenticity
+                            of credentials, ensuring trust, privacy, and
+                            efficiency.
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </section>
         </div>
         <div
@@ -344,7 +457,9 @@ const HomePage: NextPage = () => {
               <h2 className="font-semibold tracking-tight text-[#FF5557]">
                 Security & Privacy
               </h2>
-              <p className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
+              <p
+                className={`mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl ${gabarito.className}`}
+              >
                 <span className="hidden sm:block">
                   <span className="inline-block align-top text-balance">
                     Security and Privacy First
@@ -372,11 +487,11 @@ const HomePage: NextPage = () => {
                 our users.
               </p>
               <div
-                className="grid grid-cols-1 lg:grid-cols-2 gap-2"
+                className="grid grid-cols-1 lg:grid-cols-2 gap-4"
                 data-aos="fade-up"
                 data-aos-delay="10"
               >
-                <Card>
+                <Card className="bg-accent/30">
                   <CardContent className="p-2">
                     <div className="grid grid-cols-[48px,auto] gap-2">
                       <div className="h-10 w-10 pt-2 border rounded-lg bg-foreground text-background shadow-lg self-center">
@@ -392,7 +507,7 @@ const HomePage: NextPage = () => {
                     </div>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="bg-accent/30">
                   <CardContent className="p-2">
                     <div className="grid grid-cols-[48px,auto] gap-2">
                       <div className="h-10 w-10 pt-2 border rounded-lg bg-foreground text-background shadow-lg self-center">
@@ -413,7 +528,7 @@ const HomePage: NextPage = () => {
                     </div>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="bg-accent/30">
                   <CardContent className="p-2">
                     <div className="grid grid-cols-[48px,auto] gap-2">
                       <div className="h-10 w-10 pt-2 border rounded-lg bg-foreground text-background shadow-lg self-center">
@@ -431,7 +546,7 @@ const HomePage: NextPage = () => {
                     </div>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="bg-accent/30">
                   <CardContent className="p-2">
                     <div className="grid grid-cols-[48px,auto] gap-2">
                       <div className="h-10 w-10 pt-2 border rounded-lg bg-foreground text-background shadow-lg self-center">
@@ -456,13 +571,15 @@ const HomePage: NextPage = () => {
             </div>
           </section>
         </div>
-        <div className="mx-auto max-w-sm sm:max-w-7xl px-4 lg:px-8 overflow-hidden pb-20">
+        <div className="mx-auto max-w-7xl px-4 pt-10 lg:px-10 overflow-hidden pb-20">
           <section className="mt-0 sm:mt-5 px-2">
             <div data-aos="fade-up" data-aos-delay="50">
               <h2 className="font-semibold tracking-tight text-[#FF5557]">
                 Use cases
               </h2>
-              <p className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
+              <p
+                className={`mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl ${gabarito.className}`}
+              >
                 <span className="hidden sm:block">
                   <span className="inline-block align-top text-balance">
                     Use Cases Across Industries
@@ -470,107 +587,109 @@ const HomePage: NextPage = () => {
                 </span>
                 <span className="sm:hidden">Use Cases Across Industries</span>
               </p>
+              <p className="mt-3 leading-7 sm:text-lg sm:leading-8">
+                Transforming Industries with Secure, Self-Sovereign Identity
+                Solutions
+              </p>
             </div>
-            <Carousel
-              opts={{
-                align: "start",
-              }}
-              className="ml-[2rem] mt-12 relative flex flex-wrap sm:mt-14 w-[calc(100%-4rem)]"
-              data-aos="fade-up"
-              data-aos-delay="10"
-            >
-              <CarouselContent>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1">
-                    <Card>
-                      <CardContent className="flex items-center justify-center p-6">
-                        <div className="grid grid-rows-[auto,auto] gap-4">
-                          <h4 className="text-lg font-semibold text-left text-sky-600">
-                            Education
-                          </h4>
-                          <p className="text-base/7 text-muted-foreground">
-                            Enable universities and institutions to issue
-                            tamper-proof diplomas and certificates, easily
-                            verified by employers worldwide.
-                          </p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1">
-                    <Card>
-                      <CardContent className="flex items-center justify-center p-6">
-                        <div className="grid grid-rows-[auto,auto] gap-4">
-                          <h4 className="text-lg font-semibold text-left text-purple-600">
-                            Finance
-                          </h4>
-                          <p className="text-base/7 text-muted-foreground">
-                            Streamline KYC (Know Your Customer) processes with
-                            verifiable credentials, reducing onboarding time and
-                            enhancing customer experience.
-                          </p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1">
-                    <Card>
-                      <CardContent className="flex items-center justify-center p-6">
-                        <div className="grid grid-rows-[auto,auto] gap-4">
-                          <h4 className="text-lg font-semibold text-left text-green-600">
-                            Healthcare
-                          </h4>
-                          <p className="text-base/7 text-muted-foreground">
-                            Empower patients with verifiable health credentials,
-                            reducing paperwork and ensuring privacy while
-                            meeting HIPAA compliance.
-                          </p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1">
-                    <Card>
-                      <CardContent className="flex items-center justify-center p-6">
-                        <div className="grid grid-rows-[auto,auto] gap-4">
-                          <h4 className="text-lg font-semibold text-left text-pink-600">
-                            Government & Public Services
-                          </h4>
-                          <p className="text-base/7 text-muted-foreground">
-                            Provide citizens with secure digital identities,
-                            enhancing accessibility to services while ensuring
-                            data privacy and sovereignty.
-                          </p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
-            <div
-              className="mt-10 sm:flex sm:items-center sm:justify-center sm:gap-x-4"
-              data-aos="fade-up"
-              data-aos-delay="10"
-            >
-              <Button size="lg" variant="default">
-                <Link href="/reviews">See All Use Cases</Link>
-              </Button>
+            <div data-aos="fade-up" data-aos-delay="10">
+              <Carousel
+                opts={{
+                  align: "start",
+                }}
+                className="w-full mt-4 sm:mt-6 max-w-[18rem] sm:max-w-full ml-[3rem] sm:ml-0"
+                data-aos="fade-up"
+                data-aos-delay="10"
+              >
+                <CarouselContent>
+                  <CarouselItem className="sm:basis-1/3">
+                    <div className="p-1 h-full flex">
+                      <Card className="bg-accent/30">
+                        <CardContent className="flex items-center justify-center p-6">
+                          <div className="grid grid-rows-[auto,auto] gap-4">
+                            <h4 className="text-lg font-semibold text-left text-sky-600">
+                              Education
+                            </h4>
+                            <p className="text-base/7 text-muted-foreground">
+                              Enable universities and institutions to issue
+                              tamper-proof diplomas and certificates, easily
+                              verified by employers worldwide.
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="sm:basis-1/3">
+                    <div className="p-1 h-full flex">
+                      <Card className="bg-accent/30">
+                        <CardContent className="flex items-center justify-center p-6">
+                          <div className="grid grid-rows-[auto,auto] gap-4">
+                            <h4 className="text-lg font-semibold text-left text-purple-600">
+                              Finance
+                            </h4>
+                            <p className="text-base/7 text-muted-foreground">
+                              Streamline KYC (Know Your Customer) processes with
+                              verifiable credentials, reducing onboarding time
+                              and enhancing customer experience.
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="sm:basis-1/3">
+                    <div className="p-1 h-full flex">
+                      <Card className="bg-accent/30">
+                        <CardContent className="flex items-center justify-center p-6">
+                          <div className="grid grid-rows-[auto,auto] gap-4">
+                            <h4 className="text-lg font-semibold text-left text-green-600">
+                              Healthcare
+                            </h4>
+                            <p className="text-base/7 text-muted-foreground">
+                              Empower patients with verifiable health
+                              credentials, reducing paperwork and ensuring
+                              privacy while meeting HIPAA compliance.
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem className="sm:basis-1/3">
+                    <div className="p-1 h-full flex">
+                      <Card className="bg-accent/30">
+                        <CardContent className="flex items-center justify-center p-6">
+                          <div className="grid grid-rows-[auto,auto] gap-4">
+                            <h4 className="text-lg font-semibold text-left text-pink-600">
+                              Government & Public Services
+                            </h4>
+                            <p className="text-base/7 text-muted-foreground">
+                              Provide citizens with secure digital identities,
+                              enhancing accessibility to services while ensuring
+                              data privacy and sovereignty.
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+              <div className="mt-10 sm:flex sm:items-center sm:justify-center sm:gap-x-4">
+                <Button size="lg" variant="default">
+                  <Link href="/reviews">See All Use Cases</Link>
+                </Button>
+              </div>
             </div>
           </section>
         </div>
         <div className="lg:w-full lg:max-w-4xl mx-auto px-4 pb-20 pt-6">
           <div className="mt-4 sm:mt-8 sm:text-center">
             <h1
-              className="text-4xl font-semibold sm:text-4xl tracking-tight"
+              className={`text-5xl font-semibold sm:text-6xl tracking-tight ${gabarito.className}`}
               data-aos="fade-up"
               data-aos-delay="50"
             >
@@ -581,13 +700,19 @@ const HomePage: NextPage = () => {
                 Ready to Transform Identity Verification?
               </span>
             </h1>
-            <p
-              className="mt-6 leading-7 sm:text-lg sm:leading-8"
-              data-aos="fade-up"
-              data-aos-delay="10"
-            >
-              <span className="hidden sm:block">
-                <span className="inline-block text-justify align-top">
+            <div data-aos="fade-up" data-aos-delay="10">
+              <p className="mt-6 leading-7 sm:text-lg sm:leading-8">
+                <span className="hidden sm:block">
+                  <span className="inline-block text-justify align-top text-muted-foreground">
+                    Experience a new standard in identity management that
+                    prioritizes privacy, security, and user control. Whether
+                    you're an organization looking to issue secure credentials
+                    or a verifier seeking instant, trustworthy validation, our
+                    platform is designed for you. Join us in building the future
+                    of decentralized identity.
+                  </span>
+                </span>
+                <span className="sm:hidden text-muted-foreground">
                   Experience a new standard in identity management that
                   prioritizes privacy, security, and user control. Whether
                   you're an organization looking to issue secure credentials or
@@ -595,35 +720,23 @@ const HomePage: NextPage = () => {
                   platform is designed for you. Join us in building the future
                   of decentralized identity.
                 </span>
-              </span>
-              <span className="sm:hidden">
-                Experience a new standard in identity management that
-                prioritizes privacy, security, and user control. Whether you're
-                an organization looking to issue secure credentials or a
-                verifier seeking instant, trustworthy validation, our platform
-                is designed for you. Join us in building the future of
-                decentralized identity.
-              </span>
-            </p>
-            <div
-              className="mt-10 sm:flex sm:items-center sm:justify-center sm:gap-x-4"
-              data-aos="fade-up"
-              data-aos-delay="10"
-            >
-              <Button size="lg" variant="default">
-                <Link href="/reviews">Let's do it</Link>
-              </Button>
-              <Button variant="link">
-                <div className="flex">
-                  <span className="text-sm self-center text-[#FF5557]">
-                    Request a Demo{" "}
-                  </span>
-                  <IconComponent
-                    name="ChevronRight"
-                    className="h-5 w-5 text-[#FF5557]"
-                  />
-                </div>
-              </Button>
+              </p>
+              <div className="mt-10 sm:flex sm:items-center sm:justify-center sm:gap-x-4">
+                <Button size="lg" variant="default">
+                  <Link href="/reviews">Let's do it</Link>
+                </Button>
+                <Button variant="link">
+                  <div className="flex">
+                    <span className="text-sm self-center text-[#FF5557]">
+                      Request a Demo{" "}
+                    </span>
+                    <IconComponent
+                      name="ChevronRight"
+                      className="h-5 w-5 text-[#FF5557]"
+                    />
+                  </div>
+                </Button>
+              </div>
             </div>
           </div>
         </div>

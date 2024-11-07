@@ -1,12 +1,7 @@
-import { Plus_Jakarta_Sans, Poppins } from "next/font/google"
+import { Gabarito } from "next/font/google"
 
-export const plusJakartaSans = Plus_Jakarta_Sans({
+export const gabarito = Gabarito({
   subsets: ["latin"],
-  variable: "--font-plus-jakarta-sans",
-})
-
-export const poppins = Poppins({
-  subsets: ["latin"],
-  variable: "--font-poppins",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-gabarito",
+  weight: ["400", "500", "600", "700", "800", "900"],
 })

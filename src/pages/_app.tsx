@@ -12,17 +12,15 @@ import AppProviders from "@/components/AppProviders"
 function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     AOS.init({
-      duration: 2000,
-      easing: "ease-in-out-back",
+      duration: 500,
+      easing: "ease-in-out-cubic",
       once: true,
     })
   }, [])
 
   return (
     <AppProviders>
-      <div className="font-sans">
-        <Component {...pageProps} />
-      </div>
+      <Component {...pageProps} />
     </AppProviders>
   )
 }

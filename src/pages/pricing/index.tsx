@@ -3,7 +3,7 @@ import Link from "next/link"
 import React from "react"
 
 import clsxm from "@/lib/clsxm"
-import { poppins } from "@/lib/fonts"
+import { gabarito } from "@/lib/fonts"
 
 import {
   Accordion,
@@ -29,7 +29,7 @@ const Pricing: NextPage = () => {
       <main>
         <section className="text-center py-20 px-4">
           <h1
-            className={`text-5xl font-semibold sm:text-7xl tracking-tight ${poppins.className} mb-4`}
+            className={`text-5xl font-semibold sm:text-7xl tracking-tight ${gabarito.className} mb-4`}
             data-aos="fade-up"
             data-aos-delay="50"
           >
@@ -584,27 +584,25 @@ const Pricing: NextPage = () => {
             </div>
           </div>
         </section>
-        <section className="mt-24 md:mt-28 container mx-auto flex flex-col items-center max-w-[1019px]">
+        <section
+          className="mt-24 md:mt-28 container mx-auto flex flex-col items-center max-w-[1019px]"
+          data-aos="fade-up"
+          data-aos-delay="50"
+        >
           <h2
-            className="mx-5 pb-2 font-bold text-center text-5xl leading-[100%]"
-            data-aos="fade-up"
-            data-aos-delay="50"
+            className={`mx-5 pb-2 font-bold text-center text-5xl leading-[100%] ${gabarito.className}`}
           >
             Frequently asked questions
           </h2>
-          <p
-            className="mx-5 mt-3 text-center md:text-xl max-w-[764px]"
-            data-aos="fade-up"
-            data-aos-delay="10"
-          >
+          <p className="mx-5 mt-3 text-center md:text-xl max-w-[764px]">
             At decentractive, we strive to provide the best service possible. If
             you have any questions, please check our FAQ below or please get in
             touch at{" "}
             <Link
               className="text-[#FF5557]"
-              href="mailto:hello@decentractive.io?subject=Question%20about%20Decentractive&amp;body="
+              href="mailto:contact@decentractive.io?subject=Question%20about%20Decentractive&amp;body="
             >
-              hello@decentractive.io
+              contact@decentractive.io
             </Link>
           </p>
           <Accordion
@@ -828,34 +826,34 @@ const Pricing: NextPage = () => {
           </Accordion>
         </section>
         <div>
-          <div className="pt-24 md:pt-32 lg:pt-40 bg-downtime">
-            <section className="container mx-auto flex flex-col items-center aos-init aos-animate">
+          <div className="pt-24 sm:pt-28">
+            <section className="container mx-auto flex flex-col items-center">
               <h2
-                className={`mt-2 md:mt-5 font-bold text-center text-[32px] md:text-[52px] lg:text-[64px] leading-[98%] ${poppins.className}`}
+                className={`mt-2 md:mt-5 tracking-tight font-bold text-center text-[32px] md:text-[52px] lg:text-[64px] leading-[98%] ${gabarito.className}`}
                 data-aos="fade-up"
                 data-aos-delay="50"
               >
                 Ready to Take Control of Your Digital Identity?
               </h2>
-              <p
-                className="mt-5 text-center md:text-xl max-w-4xl md:max-w-5xl"
+              <div
                 data-aos="fade-up"
                 data-aos-delay="10"
+                className="flex flex-col"
               >
-                Join Decentractive and experience a secure, privacy-first
-                approach to digital identity management. <br />
-                Choose the plan that fits your needs and start building trust
-                today.
-              </p>
-              <Button
-                size="lg"
-                className="mt-6 md:mt-8 w-full flex items-center justify-center font-medium text-base sm:text-large-18 ring-2 ring-offset-2 h-[50px] max-w-[332px] ring-offset-white"
-                variant="default"
-                data-aos="fade-up"
-                data-aos-delay="10"
-              >
-                Start for free
-              </Button>
+                <p className="mt-5 text-center md:text-xl max-w-4xl md:max-w-5xl">
+                  Join Decentractive and experience a secure, privacy-first
+                  approach to digital identity management. <br />
+                  Choose the plan that fits your needs and start building trust
+                  today.
+                </p>
+                <Button
+                  size="lg"
+                  className="mt-6 md:mt-8 w-full flex items-center mx-auto justify-center font-medium text-base sm:text-large-18 ring-2 ring-offset-2 h-[50px] max-w-[332px] ring-offset-white"
+                  variant="default"
+                >
+                  Start for free
+                </Button>
+              </div>
               <div className="pb-20 md:pb-28 lg:pb-36"></div>
             </section>
           </div>

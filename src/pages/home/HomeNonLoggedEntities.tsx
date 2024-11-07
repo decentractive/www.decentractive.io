@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { FC } from "react"
 
-import { poppins } from "@/lib/fonts"
+import { gabarito } from "@/lib/fonts"
 
 import { Button } from "@/components"
 import IconComponent from "@/components/GenericIcon/IconComponent"
@@ -11,7 +11,7 @@ const HomeNonLoggedEntities: FC = () => {
     <div className="lg:w-full mx-auto px-4 pb-20 pt-14">
       <div className="mt-4 sm:mt-8 sm:text-center">
         <h1
-          className={`text-5xl font-semibold sm:text-7xl tracking-tight ${poppins.className}`}
+          className={`text-5xl font-semibold sm:text-7xl tracking-tight ${gabarito.className}`}
           data-aos="fade-up"
           data-aos-delay="50"
         >

@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { FC } from "react"
-import { RiTwitterXFill } from "react-icons/ri"
+import { RiLinkedinBoxFill, RiTwitterXFill } from "react-icons/ri"
 import { SiGitbook, SiGithub } from "react-icons/si"
 
 import clsxm from "@/lib/clsxm"
@@ -27,9 +27,19 @@ const ExternalLinks: FC<ExternalLinksProps> = ({
       )}
       aria-label="Links"
     >
+      <ShadTooltip content="LinkedIn" side={tooltipSide} asChild>
+        <Link
+          href="https://www.linkedin.com/company/decentractive/about/"
+          className="flex items-center gap-3"
+          target="_blank"
+        >
+          <RiLinkedinBoxFill className="h-6 w-6 fill-current" />
+          {showLabels && <span>LinkedIn</span>}
+        </Link>
+      </ShadTooltip>
       <ShadTooltip content="X" side={tooltipSide} asChild>
         <Link
-          href="https://twitter.com/decentractive"
+          href="https://x.com/decentractive"
           className="flex items-center gap-3"
           target="_blank"
         >
@@ -39,7 +49,7 @@ const ExternalLinks: FC<ExternalLinksProps> = ({
       </ShadTooltip>
       <ShadTooltip content="Github" side={tooltipSide} asChild>
         <Link
-          href="https://github.com/HedgifyX"
+          href="https://github.com/decentractive"
           className="flex items-center gap-3"
           target="_blank"
         >
@@ -49,7 +59,7 @@ const ExternalLinks: FC<ExternalLinksProps> = ({
       </ShadTooltip>
       <ShadTooltip content="GitBook" side={tooltipSide} asChild>
         <Link
-          href="https://docs.licite.xyz"
+          href="https://docs.decentractive.io"
           className="flex items-center gap-3"
           target="_blank"
         >
