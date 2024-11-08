@@ -1,4 +1,5 @@
 import type { NextPage } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import React from "react"
 
@@ -603,75 +604,131 @@ const HomePage: NextPage = () => {
               >
                 <CarouselContent>
                   <CarouselItem className="sm:basis-1/3">
-                    <div className="p-1 h-full flex">
-                      <Card className="bg-accent/30">
-                        <CardContent className="flex items-center justify-center p-6">
-                          <div className="grid grid-rows-[auto,auto] gap-4">
-                            <h4 className="text-lg font-semibold text-left text-sky-600">
-                              Education
-                            </h4>
-                            <p className="text-base/7 text-muted-foreground">
+                    <div className="flex flex-col relative overflow-hidden text-foreground box-border outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-md rounded-xl w-full h-[300px] col-span-12 sm:col-span-7">
+                      <div className="flex p-3 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-lg absolute z-10 top-1 flex-col items-start">
+                        <p className="text-base text-[#fff]/60 uppercase font-bold">
+                          Education
+                        </p>
+                        <h4 className="text-[#fff]/90 font-medium text-xl">
+                          Academic Credentials
+                        </h4>
+                      </div>
+                      <Image
+                        src="/images/jpg/education.jpg"
+                        className="relative opacity-0 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none rounded-lg z-0 w-full h-full object-cover"
+                        alt="Academic Credentials"
+                        data-loaded="true"
+                        width={0}
+                        height={0}
+                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                      />
+                      <div className="p-3 h-auto flex w-full items-center overflow-hidden color-inherit subpixel-antialiased rounded-b-large backdrop-blur backdrop-saturate-150 absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+                        <div className="flex flex-grow gap-2 items-center">
+                          <div className="flex flex-col">
+                            <p className="text-sm text-[#fff]/80">
                               Enable universities and institutions to issue
                               tamper-proof diplomas and certificates, easily
                               verified by employers worldwide.
                             </p>
                           </div>
-                        </CardContent>
-                      </Card>
+                        </div>
+                      </div>
                     </div>
                   </CarouselItem>
                   <CarouselItem className="sm:basis-1/3">
-                    <div className="p-1 h-full flex">
-                      <Card className="bg-accent/30">
-                        <CardContent className="flex items-center justify-center p-6">
-                          <div className="grid grid-rows-[auto,auto] gap-4">
-                            <h4 className="text-lg font-semibold text-left text-purple-600">
-                              Finance
-                            </h4>
-                            <p className="text-base/7 text-muted-foreground">
+                    <div className="flex flex-col relative overflow-hidden text-foreground box-border outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-md rounded-xl w-full h-[300px] col-span-12 sm:col-span-7">
+                      <div className="flex p-3 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-lg absolute z-10 top-1 flex-col items-start">
+                        <p className="text-base text-[#fff]/60 uppercase font-bold">
+                          Finance
+                        </p>
+                        <h4 className="text-[#fff]/90 font-medium text-xl">
+                          KYC & Onboarding
+                        </h4>
+                      </div>
+                      <Image
+                        src="/images/jpg/finance.jpg"
+                        className="relative opacity-0 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none rounded-lg z-0 w-full h-full object-cover"
+                        alt="KYC & Onboarding"
+                        data-loaded="true"
+                        width={0}
+                        height={0}
+                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                      />
+                      <div className="p-3 h-auto flex w-full items-center overflow-hidden color-inherit subpixel-antialiased rounded-b-large backdrop-blur backdrop-saturate-150 absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+                        <div className="flex flex-grow gap-2 items-center">
+                          <div className="flex flex-col">
+                            <p className="text-sm text-[#fff]/80">
                               Streamline KYC (Know Your Customer) processes with
                               verifiable credentials, reducing onboarding time
                               and enhancing customer experience.
                             </p>
                           </div>
-                        </CardContent>
-                      </Card>
+                        </div>
+                      </div>
                     </div>
                   </CarouselItem>
                   <CarouselItem className="sm:basis-1/3">
-                    <div className="p-1 h-full flex">
-                      <Card className="bg-accent/30">
-                        <CardContent className="flex items-center justify-center p-6">
-                          <div className="grid grid-rows-[auto,auto] gap-4">
-                            <h4 className="text-lg font-semibold text-left text-green-600">
-                              Healthcare
-                            </h4>
-                            <p className="text-base/7 text-muted-foreground">
+                    <div className="flex flex-col relative overflow-hidden text-foreground box-border outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-md rounded-xl w-full h-[300px] col-span-12 sm:col-span-7">
+                      <div className="flex p-3 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-lg absolute z-10 top-1 flex-col items-start">
+                        <p className="text-base text-[#000]/60 uppercase font-bold">
+                          Healthcare
+                        </p>
+                        <h4 className="text-[#000]/90 font-medium text-xl">
+                          Health Credentials
+                        </h4>
+                      </div>
+                      <Image
+                        src="/images/jpg/healthcare.jpg"
+                        className="relative opacity-0 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none rounded-lg z-0 w-full h-full object-cover"
+                        alt="Health Credentials"
+                        data-loaded="true"
+                        width={0}
+                        height={0}
+                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                      />
+                      <div className="p-3 h-auto flex w-full items-center overflow-hidden color-inherit subpixel-antialiased rounded-b-large backdrop-blur backdrop-saturate-150 absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+                        <div className="flex flex-grow gap-2 items-center">
+                          <div className="flex flex-col">
+                            <p className="text-sm text-[#fff]/80">
                               Empower patients with verifiable health
                               credentials, reducing paperwork and ensuring
                               privacy while meeting HIPAA compliance.
                             </p>
                           </div>
-                        </CardContent>
-                      </Card>
+                        </div>
+                      </div>
                     </div>
                   </CarouselItem>
                   <CarouselItem className="sm:basis-1/3">
-                    <div className="p-1 h-full flex">
-                      <Card className="bg-accent/30">
-                        <CardContent className="flex items-center justify-center p-6">
-                          <div className="grid grid-rows-[auto,auto] gap-4">
-                            <h4 className="text-lg font-semibold text-left text-pink-600">
-                              Government & Public Services
-                            </h4>
-                            <p className="text-base/7 text-muted-foreground">
+                    <div className="flex flex-col relative overflow-hidden text-foreground box-border outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 shadow-md rounded-xl w-full h-[300px] col-span-12 sm:col-span-7">
+                      <div className="flex p-3 w-full justify-start shrink-0 overflow-inherit color-inherit subpixel-antialiased rounded-t-lg absolute z-10 top-1 flex-col items-start">
+                        <p className="text-base text-[#fff]/60 uppercase font-bold">
+                          Government & Public Services
+                        </p>
+                        <h4 className="text-[#fff]/90 font-medium text-xl">
+                          Digital Identity
+                        </h4>
+                      </div>
+                      <Image
+                        src="/images/jpg/government.jpg"
+                        className="relative opacity-0 shadow-black/5 data-[loaded=true]:opacity-100 shadow-none rounded-lg z-0 w-full h-full object-cover"
+                        alt="Digital Identity"
+                        data-loaded="true"
+                        width={0}
+                        height={0}
+                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                      />
+                      <div className="p-3 h-auto flex w-full items-center overflow-hidden color-inherit subpixel-antialiased rounded-b-large backdrop-blur backdrop-saturate-150 absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+                        <div className="flex flex-grow gap-2 items-center">
+                          <div className="flex flex-col">
+                            <p className="text-sm text-[#fff]/80">
                               Provide citizens with secure digital identities,
                               enhancing accessibility to services while ensuring
                               data privacy and sovereignty.
                             </p>
                           </div>
-                        </CardContent>
-                      </Card>
+                        </div>
+                      </div>
                     </div>
                   </CarouselItem>
                 </CarouselContent>
