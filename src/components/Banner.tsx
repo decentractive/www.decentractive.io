@@ -206,7 +206,7 @@ const Banner: FC<BannerProps> = ({ className }) => {
               >
                 <IconComponent
                   name="Menu"
-                  className="side-bar-button-size"
+                  className="side-bar-button-size text-[#FF5557]"
                   aria-hidden="true"
                 />
               </div>

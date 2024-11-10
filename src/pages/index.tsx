@@ -732,8 +732,8 @@ const HomePage: NextPage = () => {
                     </div>
                   </CarouselItem>
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious className="bg-[#FF5557] hover:bg-red-700 hover:text-[#fff] disabled:bg-[#FF5557] text-[#fff] border-none font-semibold" />
+                <CarouselNext className="bg-[#FF5557] hover:bg-red-700 hover:text-[#fff]  disabled:bg-[#FF5557] text-[#fff] border-none font-semibold" />
               </Carousel>
               <div className="mt-10 sm:flex sm:items-center sm:justify-center sm:gap-x-4">
                 <Button size="lg" variant="default">
