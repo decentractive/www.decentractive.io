@@ -8,10 +8,10 @@ import IconComponent from "@/components/GenericIcon/IconComponent"
 
 const HomeNonLoggedEntities: FC = () => {
   return (
-    <div className="lg:w-full max-w-7xl mx-auto px-4 pb-20 pt-14">
-      <div className="mt-4 sm:mt-8 sm:text-center">
+    <div className="lg:w-full mx-auto px-4 pb-20">
+      <div className="mt-4 sm:mt-8 sm:text-center w-[100vw] h-[calc(100vh-100px)] pt-[calc(30vh-70px)]">
         <h1
-          className={`text-5xl font-semibold sm:text-7xl tracking-tight ${gabarito.className}`}
+          className={`text-5xl font-semibold sm:text-7xl mx-auto max-w-7xl tracking-tight ${gabarito.className}`}
           data-aos="fade-up"
           data-aos-delay="50"
         >
