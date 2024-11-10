@@ -49,7 +49,7 @@ const Banner: FC<BannerProps> = ({ className }) => {
         <div className="layout relative items-center justify-between flex">
           <div className="items-center space-x-10 max-md:pl-1 flex py-1.5 md:my-2">
             <Link {...resolvedRoute("/")} className="group px-1">
-              <div className="grid grid-cols-[auto,auto] gap-1 items-center">
+              <div className="grid grid-cols-[28px,auto] gap-1 items-center">
                 <ShadTooltip content="decentractive" side="right">
                   <DecentractiveLogo
                     className="h-7 w-auto"

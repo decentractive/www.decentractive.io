@@ -609,7 +609,7 @@ const HomePage: NextPage = () => {
                         <p className="text-base text-[#fff]/60 uppercase font-bold">
                           Education
                         </p>
-                        <h4 className="text-[#fff]/90 font-medium text-xl">
+                        <h4 className="text-[#fff]/90 font-medium text-xl bg-[#000]/40">
                           Academic Credentials
                         </h4>
                       </div>
@@ -641,7 +641,7 @@ const HomePage: NextPage = () => {
                         <p className="text-base text-[#fff]/60 uppercase font-bold">
                           Finance
                         </p>
-                        <h4 className="text-[#fff]/90 font-medium text-xl">
+                        <h4 className="text-[#fff]/90 font-medium text-xl bg-[#000]/40">
                           KYC & Onboarding
                         </h4>
                       </div>

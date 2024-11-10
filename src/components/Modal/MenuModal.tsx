@@ -36,7 +36,7 @@ export default function MenuModal({
         <SheetHeader>
           <SheetTitle className="flex text-md pb-2">
             <Link {...resolvedRoute("/")} className="group">
-              <div className="grid grid-cols-[auto,auto] gap-1 items-center">
+              <div className="grid grid-cols-[28px,auto] gap-1 items-center">
                 <ShadTooltip content="decentractive" side="right">
                   <DecentractiveLogo
                     className="h-7 w-auto"

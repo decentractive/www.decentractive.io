@@ -28,7 +28,7 @@ const Footer: FC<FooterProps> = ({ className }) => {
               <div className="sm:items-start flex sm:flex-[1_0_0px] flex-col flex-nowrap gap-0 h-min justify-start overflow-visible relative sm:w-px p-0">
                 <div className="flex-none overflow-visible relative">
                   <Link {...resolvedRoute("/")} className="group">
-                    <div className="grid grid-cols-[auto,auto] gap-1 items-center">
+                    <div className="grid grid-cols-[28px,auto] gap-1 items-center">
                       <ShadTooltip content="decentractive" side="right">
                         <DecentractiveLogo
                           className="h-7 w-auto"

@@ -18,8 +18,6 @@ import Layout from "@/components/Layout"
 import Seo from "@/components/Seo"
 
 const Pricing: NextPage = () => {
-  const [paymentPeriod, setPaymentPeriod] = React.useState("monthly")
-
   return (
     <Layout>
       <Seo
@@ -36,7 +34,7 @@ const Pricing: NextPage = () => {
             <span className="hidden sm:block align-top text-balance">
               Pay only for what you use
             </span>
-            <span className="sm:hidden">Pay only for whay you use</span>
+            <span className="sm:hidden">Pay only for what you use</span>
           </h1>
           <p
             className="text-lg text-muted-foreground mb-10"
