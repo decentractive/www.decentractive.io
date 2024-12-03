@@ -32,24 +32,13 @@ import network_light_webm from "~/videos/network_light.webm"
 
 const HomePage: NextPage = () => {
   const { dark } = useDarkAtom()
-  const [network, setNetwork] = React.useState(
-    dark ? network_dark : network_light,
-  )
-  const [networkWebm, setNetworkWebm] = React.useState(
-    dark ? network_dark_webm : network_light_webm,
-  )
 
-  const vidRef = React.useRef<HTMLVideoElement>(null)
+  const vidRefDark = React.useRef<HTMLVideoElement>(null)
+  const vidRefLight = React.useRef<HTMLVideoElement>(null)
 
   React.useEffect(() => {
-    if (dark) {
-      setNetwork(network_dark)
-      setNetworkWebm(network_dark_webm)
-    } else {
-      setNetwork(network_light)
-      setNetworkWebm(network_light_webm)
-    }
-    vidRef.current?.load()
+    vidRefDark.current?.load()
+    vidRefLight.current?.load()
   }, [dark])
 
   return (
@@ -61,29 +50,53 @@ const HomePage: NextPage = () => {
             <HomeNonLoggedEntities />
           </div>
           <div className="framer">
-            <div className="relative w-full h-full flex-none">
-              <video
-                ref={vidRef}
-                preload="auto"
-                playsInline
-                autoPlay
-                muted
-                loop
-                className="cursor-auto w-full h-full block object-cover bg-[rgba(0,0,0,0)] object-[50%_50%] rounded-none"
-                data-aos="fade-in"
-                data-aos-delay="50"
-              >
-                <source
-                  src={networkWebm}
-                  type="video/webm; codecs=av01.0.08M.08.0.110.01.01.01.1"
-                />
-                <source
-                  src={network}
-                  type="video/mp4; codecs=hvc1.1.6.H120.b0"
-                />
-                <source src={networkWebm} type="video/webm; codecs=vp9" />
-              </video>
-            </div>
+            {dark ? (
+              <div className="h-full w-full flex-none">
+                <video
+                  ref={vidRefDark}
+                  preload="auto"
+                  playsInline
+                  autoPlay
+                  muted
+                  loop
+                  data-aos="fade-in"
+                  data-aos-delay="50"
+                  className="cursor-auto w-full h-full block object-cover bg-[rgba(0,0,0,0)] object-[50%_50%] rounded-none"
+                >
+                  <source
+                    src={network_dark_webm}
+                    type="video/webm; codecs=vp9"
+                  />
+                  <source
+                    src={network_dark}
+                    type="video/mp4; codecs=hvc1.1.6.H120.b0"
+                  />
+                </video>
+              </div>
+            ) : (
+              <div className="h-full w-full flex-none">
+                <video
+                  ref={vidRefLight}
+                  preload="auto"
+                  playsInline
+                  autoPlay
+                  muted
+                  loop
+                  data-aos="fade-in"
+                  data-aos-delay="50"
+                  className="cursor-auto w-full h-full block object-cover bg-[rgba(0,0,0,0)] object-[50%_50%] rounded-none"
+                >
+                  <source
+                    src={network_light_webm}
+                    type="video/webm; codecs=vp9"
+                  />
+                  <source
+                    src={network_light}
+                    type="video/mp4; codecs=hvc1.1.6.H120.b0"
+                  />
+                </video>
+              </div>
+            )}
           </div>
         </section>
         <div className="grid sm:grid-cols-2 gap-4 mx-auto max-w-7xl overflow-hidden pb-20 mt-10">

@@ -64,7 +64,7 @@ const HomeNonLoggedEntities: FC = () => {
           </Button>
           <Button variant="link">
             <div className="flex">
-              <span className="text-sm self-center text-[#FF5557]">
+              <span className="text-sm self-center font-semibold text-[#FF5557]">
                 Learn more{" "}
               </span>
               <IconComponent
