@@ -8,10 +8,10 @@ import IconComponent from "@/components/GenericIcon/IconComponent"
 
 const HomeNonLoggedEntities: FC = () => {
   return (
-    <div className="lg:w-full mx-auto px-4 pb-20">
-      <div className="mt-4 sm:mt-8 sm:text-center w-[100vw] h-[calc(100vh-100px)] pt-[calc(30vh-70px)]">
+    <div className="flex mx-auto px-4 pb-20">
+      <div className="mt-4 sm:mt-8 w-[100vw] h-[calc(100vh-300px)] pt-[calc(15vh-70px)]">
         <h1
-          className={`text-5xl font-semibold sm:text-7xl mx-auto max-w-7xl tracking-tight ${gabarito.className}`}
+          className={`text-5xl font-semibold sm:text-8xl mx-auto max-w-7xl tracking-tighter ${gabarito.className}`}
           data-aos="fade-up"
           data-aos-delay="50"
         >
@@ -23,7 +23,7 @@ const HomeNonLoggedEntities: FC = () => {
           </span>
         </h1>
         <p
-          className="mt-6 leading-7 sm:text-lg sm:leading-8"
+          className="mt-6 leading-7 text-xl sm:text-2xl sm:leading-8 mx-auto max-w-7xl"
           data-aos="fade-up"
           data-aos-delay="10"
         >
@@ -39,7 +39,7 @@ const HomeNonLoggedEntities: FC = () => {
           </span>
         </p>
         <p
-          className="leading-7 sm:text-lg sm:leading-8"
+          className="leading-7 text-lg sm:text-xl sm:leading-8 mx-auto max-w-7xl"
           data-aos="fade-up"
           data-aos-delay="10"
         >
@@ -55,7 +55,7 @@ const HomeNonLoggedEntities: FC = () => {
           </span>
         </p>
         <div
-          className="mt-10 sm:flex sm:items-center sm:justify-center sm:gap-x-4"
+          className="mt-10 sm:flex sm:gap-x-4 mx-auto max-w-7xl"
           data-aos="fade-up"
           data-aos-delay="10"
         >

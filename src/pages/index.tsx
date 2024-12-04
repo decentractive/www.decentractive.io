@@ -46,7 +46,7 @@ const HomePage: NextPage = () => {
       <Seo />
       <main className="grid h-full w-full items-center md:justify-center">
         <section className="relative overflow-hidden pt-1">
-          <div className="mx-auto px-2 pb-20 pt-14 relative z-10 w-full">
+          <div className="mx-auto px-4 pb-20 pt-14 relative z-10 w-full">
             <HomeNonLoggedEntities />
           </div>
           <div className="framer">
