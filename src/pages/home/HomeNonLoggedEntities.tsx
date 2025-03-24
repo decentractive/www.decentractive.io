@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { FC } from "react"
 
 import { gabarito } from "@/lib/fonts"
@@ -60,7 +59,7 @@ const HomeNonLoggedEntities: FC = () => {
           data-aos-delay="10"
         >
           <Button size="lg" variant="default">
-            <Link href="/signup">Get Started</Link>
+            Get Started
           </Button>
           <Button variant="link">
             <div className="flex">

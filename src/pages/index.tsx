@@ -750,7 +750,7 @@ const HomePage: NextPage = () => {
               </Carousel>
               <div className="mt-10 sm:flex sm:items-center sm:justify-center sm:gap-x-4">
                 <Button size="lg" variant="default">
-                  <Link href="/reviews">See All Use Cases</Link>
+                  See All Use Cases
                 </Button>
               </div>
             </div>
@@ -793,7 +793,7 @@ const HomePage: NextPage = () => {
               </p>
               <div className="mt-10 sm:flex sm:items-center sm:justify-center sm:gap-x-4">
                 <Button size="lg" variant="default">
-                  <Link href="/reviews">Let's do it</Link>
+                  Let's do it
                 </Button>
                 <Button variant="link">
                   <div className="flex">

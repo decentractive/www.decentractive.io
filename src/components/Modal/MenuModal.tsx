@@ -77,12 +77,12 @@ export default function MenuModal({
                   </ListItem>
                   <ListItem
                     title="DID & Credential Flow"
-                    href="/app/kyb/register"
+                    //href="/app/kyb/register"
                   >
                     See how identities and credentials are issued, managed, and
                     verified.
                   </ListItem>
-                  <ListItem title="Security & Privacy" href="/app/kyb/register">
+                  <ListItem title="Security & Privacy">
                     Built with robust encryption and user-controlled data
                     protection.
                   </ListItem>
@@ -104,30 +104,30 @@ export default function MenuModal({
                 <ul className="grid w-full gap-1">
                   <ListItem
                     title="Self-Sovereign Identity (SSI)"
-                    href="/app/kyc/register"
+                    //href="/app/kyc/register"
                   >
                     Give users complete control over their digital identity.
                   </ListItem>
                   <ListItem
                     title="Multi-Chain Support:"
-                    href="/app/kyc/register"
+                    //href="/app/kyc/register"
                   >
                     Flexible integration across various blockchain networks.
                   </ListItem>
                   <ListItem
                     title="Compliance & Standards"
-                    href="/app/kyc/register"
+                    //href="/app/kyc/register"
                   >
                     Aligned with W3C, GDPR, HIPAA, and global regulatory
                     standards.
                   </ListItem>
-                  <ListItem title="Interoperability" href="/app/kyc/register">
+                  <ListItem title="Interoperability">
                     Seamlessly integrates with existing identity verification
                     systems.
                   </ListItem>
                   <ListItem
                     title="Audit & Access Logs"
-                    href="/app/kyc/register"
+                    //href="/app/kyc/register"
                   >
                     Full transparency with trackable activity logs for
                     compliance.
