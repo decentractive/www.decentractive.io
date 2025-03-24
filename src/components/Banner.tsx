@@ -97,14 +97,14 @@ const Banner: FC<BannerProps> = ({ className }) => {
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                         <ListItem
                           title="Self-Sovereign Identity (SSI)"
-                          href="/app/kyc/register"
+                          //href="/app/kyc/register"
                         >
                           Give users complete control over their digital
                           identity.
                         </ListItem>
                         <ListItem
                           title="Multi-Chain Support:"
-                          href="/app/kyc/register"
+                          //href="/app/kyc/register"
                         >
                           Flexible integration across various blockchain
                           networks.
@@ -118,14 +118,14 @@ const Banner: FC<BannerProps> = ({ className }) => {
                         </ListItem>
                         <ListItem
                           title="Interoperability"
-                          href="/app/kyc/register"
+                          //href="/app/kyc/register"
                         >
                           Seamlessly integrates with existing identity
                           verification systems.
                         </ListItem>
                         <ListItem
                           title="Audit & Access Logs"
-                          href="/app/kyc/register"
+                          //href="/app/kyc/register"
                         >
                           Full transparency with trackable activity logs for
                           compliance.
@@ -157,9 +157,7 @@ const Banner: FC<BannerProps> = ({ className }) => {
           <div className="header-end-division">
             <div className="hidden md:flex header-end-display">
               <Button size="sm" variant="default">
-                <Link href="/signup" className="whitespace-nowrap">
-                  Start Your Journey
-                </Link>
+                <div className="whitespace-nowrap">Start Your Journey</div>
               </Button>
               <Separator orientation="vertical" />
               <button
