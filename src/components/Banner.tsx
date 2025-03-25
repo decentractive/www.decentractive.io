@@ -182,6 +182,7 @@ const Banner: FC<BannerProps> = ({ className }) => {
             <div className="md:hidden grid grid-cols-[auto,auto] gap-3">
               <button
                 className="extra-side-bar-save-disable"
+                name="dark-mode"
                 onClick={() => {
                   setDark(!dark)
                 }}
