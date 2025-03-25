@@ -43,14 +43,14 @@ const Footer: FC<FooterProps> = ({ className }) => {
                   </Link>
                 </div>
                 <div className="flex flex-col justify-start shrink-0">
-                  <h5 className="text-sm text-muted-foreground">
+                  <h6 className="text-sm text-muted-foreground">
                     We empower you to own your identity.
-                  </h5>
+                  </h6>
                 </div>
               </div>
               <div className="gap-10 grid-cols-[repeat(2,minmax(160px,1fr))] grid flex-none sm:gap-0 auto-rows-min sm:grid-cols-[repeat(5,minmax(160px,1fr))] grid-rows-[repeat(1,min-content)] h-min overflow-visible relative w-min p-0">
                 <div className="items-start flex flex-none flex-col flex-nowrap gap-2.5 h-auto justify-start justify-self-start overflow-visible relative w-full pl-0 pr-5 py-0">
-                  <h5 className="text-sm font-semibold">About Decentractive</h5>
+                  <h6 className="text-sm font-semibold">About Decentractive</h6>
                   <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
                     <Link {...resolvedRoute("/app/kyc")}>Our Mission</Link>
                   </div>
@@ -65,7 +65,7 @@ const Footer: FC<FooterProps> = ({ className }) => {
                   </div>
                 </div>
                 <div className="items-start flex flex-none flex-col flex-nowrap gap-2.5 h-auto justify-start justify-self-start overflow-visible relative w-full pl-0 pr-5 py-0">
-                  <h5 className="text-sm font-semibold">Resources</h5>
+                  <h6 className="text-sm font-semibold">Resources</h6>
                   <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
                     <Link {...resolvedRoute("/app/kyc")}>Developer Docs</Link>
                   </div>
@@ -84,7 +84,7 @@ const Footer: FC<FooterProps> = ({ className }) => {
                   </div>
                 </div>
                 <div className="items-start flex flex-none flex-col flex-nowrap gap-2.5 h-auto justify-start justify-self-start overflow-visible relative w-full pl-0 pr-5 py-0">
-                  <h5 className="text-sm font-semibold">Solutions</h5>
+                  <h6 className="text-sm font-semibold">Solutions</h6>
                   <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
                     <Link {...resolvedRoute("/app/kyc")}>
                       Industry Applications
@@ -92,7 +92,7 @@ const Footer: FC<FooterProps> = ({ className }) => {
                   </div>
                 </div>
                 <div className="items-start flex flex-none flex-col flex-nowrap gap-2.5 h-auto justify-start justify-self-start overflow-visible relative w-full pl-0 pr-5 py-0">
-                  <h5 className="text-sm font-semibold">Community</h5>
+                  <h6 className="text-sm font-semibold">Community</h6>
                   <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
                     <Link {...resolvedRoute("/app/kyc")}>
                       Join Our Community
@@ -108,7 +108,7 @@ const Footer: FC<FooterProps> = ({ className }) => {
                   </div>
                 </div>
                 <div className="items-start flex flex-none flex-col flex-nowrap gap-2.5 h-auto justify-start justify-self-start overflow-visible relative w-full pl-0 pr-5 py-0">
-                  <h5 className="text-sm font-semibold">Legal</h5>
+                  <h6 className="text-sm font-semibold">Legal</h6>
                   <div className="flex-none h-auto relative w-auto text-sm text-muted-foreground cursor-pointer hover:text-foreground">
                     <Link {...resolvedRoute("/app/kyc")}>Privacy Policy</Link>
                   </div>
