@@ -622,9 +622,9 @@ const HomePage: NextPage = () => {
                         <p className="text-base text-[#fff]/60 uppercase font-bold">
                           Education
                         </p>
-                        <h4 className="text-[#fff]/90 font-medium text-xl bg-[#000]/40">
+                        <h5 className="text-[#fff]/90 font-medium text-xl bg-[#000]/40">
                           Academic Credentials
-                        </h4>
+                        </h5>
                       </div>
                       <Image
                         src="/images/jpg/education.jpg"
@@ -654,9 +654,9 @@ const HomePage: NextPage = () => {
                         <p className="text-base text-[#fff]/60 uppercase font-bold">
                           Finance
                         </p>
-                        <h4 className="text-[#fff]/90 font-medium text-xl bg-[#000]/40">
+                        <h5 className="text-[#fff]/90 font-medium text-xl bg-[#000]/40">
                           KYC & Onboarding
-                        </h4>
+                        </h5>
                       </div>
                       <Image
                         src="/images/jpg/finance.jpg"
@@ -686,9 +686,9 @@ const HomePage: NextPage = () => {
                         <p className="text-base text-[#000]/60 uppercase font-bold">
                           Healthcare
                         </p>
-                        <h4 className="text-[#000]/90 font-medium text-xl">
+                        <h5 className="text-[#000]/90 font-medium text-xl">
                           Health Credentials
-                        </h4>
+                        </h5>
                       </div>
                       <Image
                         src="/images/jpg/healthcare.jpg"
@@ -718,9 +718,9 @@ const HomePage: NextPage = () => {
                         <p className="text-base text-[#fff]/60 uppercase font-bold">
                           Government & Public Services
                         </p>
-                        <h4 className="text-[#fff]/90 font-medium text-xl">
+                        <h5 className="text-[#fff]/90 font-medium text-xl">
                           Digital Identity
-                        </h4>
+                        </h5>
                       </div>
                       <Image
                         src="/images/jpg/government.jpg"
