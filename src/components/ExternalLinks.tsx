@@ -32,6 +32,7 @@ const ExternalLinks: FC<ExternalLinksProps> = ({
           href="https://www.linkedin.com/company/decentractive/about/"
           className="flex items-center gap-3"
           target="_blank"
+          aria-label="LinkedIn"
         >
           <RiLinkedinBoxFill className="h-6 w-6 fill-current" />
           {showLabels && <span>LinkedIn</span>}
@@ -42,6 +43,7 @@ const ExternalLinks: FC<ExternalLinksProps> = ({
           href="https://x.com/decentractive"
           className="flex items-center gap-3"
           target="_blank"
+          aria-label="X"
         >
           <RiTwitterXFill className="h-5 w-5 fill-current" />
           {showLabels && <span>@decentractive</span>}
@@ -52,6 +54,7 @@ const ExternalLinks: FC<ExternalLinksProps> = ({
           href="https://github.com/decentractive"
           className="flex items-center gap-3"
           target="_blank"
+          aria-label="GitHub"
         >
           <SiGithub className="h-5 w-5 fill-current" />
           {showLabels && <span>GitHub</span>}
@@ -62,6 +65,7 @@ const ExternalLinks: FC<ExternalLinksProps> = ({
           href="https://docs.decentractive.io"
           className="flex items-center gap-3"
           target="_blank"
+          aria-label="Documentation"
         >
           <SiGitbook className="h-5 w-5 fill-current" />
           {showLabels && <span>Documentation</span>}
